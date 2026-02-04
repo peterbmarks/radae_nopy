@@ -25,6 +25,15 @@ cat tx.iq | \
   sox -t .s16 -r 16000 -c 1 - decoded.wav
 ```
 
+### Decode: WAV RADE to WAV
+```
+sox FDV_offair.wav -r 8000 -e float -b 32 -c 1 -t raw - | \
+./src/real2iq | \
+./src/radae_rx_nopy > features.f32
+./src/lpcnet_demo -fargan-synthesis features.f32 - | \
+sox -t .s16 -r 16000 -c 1 - decoded.wav
+```
+
 ## Files
 | File                                          | Purpose                                             |
 | --------------------------------------------- | --------------------------------------------------- |
