@@ -39,6 +39,12 @@ sox -t .s16 -r 16000 -c 1 - decoded.wav
 play decoded.wav
 ```
 
+### Rade Demod, take a wav file off air and produce a demodulated wav file
+Usage
+
+rade_demod [-v 0|1|2] <input.wav> <output.wav>
+
+
 ## Files
 | File                                          | Purpose                                             |
 | --------------------------------------------- | --------------------------------------------------- |

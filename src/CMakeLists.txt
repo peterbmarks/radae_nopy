@@ -43,3 +43,7 @@ target_link_libraries(radae_rx rade opus m)
 # Utility: convert real baseband to complex IQ
 add_executable(real2iq real2iq.c)
 target_link_libraries(real2iq m)
+
+# WAV demodulator: WAV in → demod → WAV out
+add_executable(rade_demod rade_demod.c)
+target_link_libraries(rade_demod rade opus m)
