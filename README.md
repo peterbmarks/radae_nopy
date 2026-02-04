@@ -39,10 +39,18 @@ sox -t .s16 -r 16000 -c 1 - decoded.wav
 play decoded.wav
 ```
 
-### Rade Demod, take a wav file off air and produce a demodulated wav file
+### RADE Demod
+Take a wav file off air and produce a demodulated wav file
+
 Usage
 
 rade_demod [-v 0|1|2] <input.wav> <output.wav>
+
+### RADE Modulate
+Take a wav file with speech in it and produce a RADE OFDM encoded output wav file ready for transmission.
+
+Usage:
+rade_modulate <intput.wav> <output.wav>
 
 
 ## Files

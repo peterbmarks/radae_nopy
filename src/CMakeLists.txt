@@ -47,3 +47,7 @@ target_link_libraries(real2iq m)
 # WAV demodulator: WAV in → demod → WAV out
 add_executable(rade_demod rade_demod.c)
 target_link_libraries(rade_demod rade opus m)
+
+# WAV modulator: WAV in → features → RADE encode → OFDM mod → WAV out
+add_executable(rade_modulate rade_modulate.c)
+target_link_libraries(rade_modulate rade opus m)
