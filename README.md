@@ -37,4 +37,30 @@ cat tx.iq | \
 | `src/rade_api_nopy.c`                         | Python-free API implementation                      |
 | `src/radae_tx_nopy.c` / `src/radae_rx_nopy.c` | Standalone executables                              |
 
+```
+radae_nopy/
+├── CMakeLists.txt
+├── cmake/
+│   └── BuildOpus.cmake
+└── src/
+    ├── CMakeLists.txt
+    ├── lpcnet_demo.c          # Feature extraction
+    ├── radae_tx_nopy.c        # Transmitter
+    ├── radae_rx_nopy.c        # Receiver
+    ├── real2iq.c              # Real → IQ converter
+    ├── rade_api.h             # Public API
+    ├── rade_api_nopy.c        # API implementation
+    ├── rade_dsp.h/c           # DSP primitives
+    ├── rade_ofdm.h/c          # OFDM mod/demod
+    ├── rade_bpf.h/c           # Bandpass filter
+    ├── rade_tx.h/c            # Transmitter internals
+    ├── rade_rx.h/c            # Receiver internals
+    ├── rade_acq.h/c           # Acquisition
+    ├── rade_enc.h/c           # Neural encoder
+    ├── rade_dec.h/c           # Neural decoder
+    ├── rade_enc_data.c        # Encoder weights
+    ├── rade_dec_data.c        # Decoder weights
+    └── opus-nnet.h.diff       # Opus patch
+```
+
 The implementation uses built-in neural network weights (compiled from `rade_enc_data.c` and `rade_dec_data.c`), eliminating any need for Python or external model files at runtime.
