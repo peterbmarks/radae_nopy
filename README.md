@@ -1,6 +1,6 @@
 # Experimental version of FreeDV RADE without python
 
-This repo from https://github.com/peterbmarks/radae_nopy
+This repo from https://github.com/peterbmarks/radae_nopy - thatnks Peter for this fine innovation
 
 Based on work from David Rowe https://github.com/drowe67/radae
 
