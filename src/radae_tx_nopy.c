@@ -34,6 +34,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -91,6 +92,16 @@ int main(int argc, char *argv[]) {
     int n_tx_out = rade_n_tx_out(r);
     int n_eoo_out = rade_n_tx_eoo_out(r);
 
+    FILE *feoo_bits = fopen("eoo_tx.f32","rb");
+    if (feoo_bits) {
+        int n_eoo_bits = rade_n_eoo_bits(r);
+        float eoo_bits[n_eoo_bits];
+        int ret = fread(eoo_bits, sizeof(float), n_eoo_bits, feoo_bits);
+        assert(ret == n_eoo_bits);
+        rade_tx_set_eoo_bits(r, eoo_bits);
+        fclose(feoo_bits);
+    }
+    
     fprintf(stderr, "n_features_in: %d n_tx_out: %d n_eoo_out: %d\n",
             n_features_in, n_tx_out, n_eoo_out);
 
