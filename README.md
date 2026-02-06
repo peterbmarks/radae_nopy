@@ -11,7 +11,7 @@ This has been tested on linux and macOS.
 cd radae_nopy
 mkdir build
 cd build
-cmake ..
+cmake -DCMAKE_BUILD_TYPE=Release ..
 make -j4
 ```
 ## Demo tools

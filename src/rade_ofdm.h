@@ -132,6 +132,7 @@ void rade_ofdm_est_pilots(const rade_ofdm *ofdm, RADE_COMP *pilot_est,
    rx_sym[ns][nc], pilot_est[2][nc] -> rx_sym_eq[ns][nc] (in-place)
    Returns estimated SNR in dB (3kHz bandwidth) */
 float rade_ofdm_pilot_eq(const rade_ofdm *ofdm, RADE_COMP *rx_sym,
+                         const RADE_COMP *rx_pilots_start,
                          const RADE_COMP *pilot_est_start, const RADE_COMP *pilot_est_end,
                          int coarse_mag);
 

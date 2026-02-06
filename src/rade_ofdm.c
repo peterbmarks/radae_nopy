@@ -386,6 +386,7 @@ void rade_ofdm_est_pilots(const rade_ofdm *ofdm, RADE_COMP *pilot_est,
 
 /* Equalize data symbols using pilot estimates */
 float rade_ofdm_pilot_eq(const rade_ofdm *ofdm, RADE_COMP *rx_sym,
+                         const RADE_COMP *rx_pilots_start,
                          const RADE_COMP *pilot_est_start, const RADE_COMP *pilot_est_end,
                          int coarse_mag) {
     int Nc = ofdm->nc;
@@ -393,15 +394,20 @@ float rade_ofdm_pilot_eq(const rade_ofdm *ofdm, RADE_COMP *rx_sym,
     int M = ofdm->m;
     int Ncp = ofdm->ncp;
 
-    /* Compute SNR estimate from first pilot */
+    /* Compute SNR estimate from first pilot
+       Matches Python: update_snr_est() in radae/dsp.py lines 438-444
+       S1 = signal power from received pilot symbols
+       S2 = noise power from phase-corrected received pilots */
     float S1 = 0.0f, S2 = 0.0f;
     for (int c = 0; c < Nc; c++) {
-        float mag2 = rade_cabs2(pilot_est_start[c]);
+        /* S1: signal power from received pilot symbols (not channel estimate!) */
+        float mag2 = rade_cabs2(rx_pilots_start[c]);
         S1 += mag2;
 
-        /* Phase-corrected pilot for noise estimate */
-        float phase = rade_cangle(pilot_est_start[c]);
-        RADE_COMP Rcn_hat = rade_cmul(pilot_est_start[c], rade_cexp(-phase));
+        /* S2: noise estimate from phase-corrected received pilots
+           Use phase from channel estimate to correct received pilots */
+        float rx_phase = rade_cangle(pilot_est_start[c]);
+        RADE_COMP Rcn_hat = rade_cmul(rx_pilots_start[c], rade_cexp(-rx_phase));
         S2 += Rcn_hat.imag * Rcn_hat.imag;
     }
     S2 += 1e-12f;  /* Avoid division by zero */
@@ -493,7 +499,7 @@ int rade_ofdm_demod_frame(const rade_ofdm *ofdm, float *z_hat, const RADE_COMP *
             memcpy(&rx_data[s * Nc], rx_sym[s + 1], sizeof(RADE_COMP) * Nc);
         }
 
-        *snr_est = rade_ofdm_pilot_eq(ofdm, rx_data, pilot_est[0], pilot_est[1], coarse_mag);
+        *snr_est = rade_ofdm_pilot_eq(ofdm, rx_data, &rx_pilots[0], pilot_est[0], pilot_est[1], coarse_mag);
 
         /* Demap QPSK to latent floats */
         int out_idx = 0;
