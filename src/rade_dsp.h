@@ -206,17 +206,12 @@ static inline RADE_COMP rade_cdot_comp(const RADE_COMP* a, const RADE_COMP* b, i
 {
     RADE_COMP c = {0.f, 0.f};
 
-    if (n == 1) 
+    for (int index = 0; index < n; index++)
     {
-        c = rade_cmul(a[0], b[0]);
+        RADE_COMP temp = rade_cmul(a[index], b[index]);
+        c = rade_cadd(c, temp);
     }
-    else if (n > 1)
-    {
-        int midpoint = floor(n / 2);
-        RADE_COMP left = rade_cdot_comp(a, b, midpoint);
-        RADE_COMP right = rade_cdot_comp(&a[midpoint], &b[midpoint], n - midpoint);
-        c = rade_cadd(left, right);
-    }
+
     return c;
 }
 
@@ -224,18 +219,11 @@ static inline RADE_COMP rade_cdot_float(const RADE_COMP* a, const float* b, int 
 {
     RADE_COMP c = {0.f, 0.f};
 
-    if (n == 1) 
+    for (int index = 0; index < n; index++)
     {
-        c.real = a[0].real * b[0];
-        c.imag = a[0].imag * b[0];
+        c = rade_cadd(c, rade_cscale(a[index], b[index]));
     }
-    else if (n > 1)
-    {
-        int midpoint = floor(n / 2);
-        RADE_COMP left = rade_cdot_float(a, b, midpoint);
-        RADE_COMP right = rade_cdot_float(&a[midpoint], &b[midpoint], n - midpoint);
-        c = rade_cadd(left, right);
-    }
+
     return c;
 }
 

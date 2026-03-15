@@ -103,6 +103,15 @@ int rade_acq_detect_pilots(rade_acq *acq, const RADE_COMP *rx, int *tmax, float 
 
     /* Search over time and frequency */
     for (int t = 0; t < Nmf; t++) {
+        // Cache cconj operation
+        RADE_COMP rxconj1[RADE_M];
+        RADE_COMP rxconj2[RADE_M];
+        for (int index = 0; index < M; index++)
+        {
+            rxconj1[index] = rade_cconj(rx[t + index]);
+            rxconj2[index] = rade_cconj(rx[t + Nmf + index]);
+        }
+
         for (int f_idx = 0; f_idx < n_fcoarse; f_idx++) {
             /* Correlate with frequency-shifted pilot at time t
                Dt1 = sum(conj(rx[t:t+M]) * p_w[:][f_idx]) */
@@ -112,8 +121,10 @@ int rade_acq_detect_pilots(rade_acq *acq, const RADE_COMP *rx, int *tmax, float 
             for (int n = 0; n < M; n++) {
                 /* Note: Python uses np.conj(rx) first, then matmul
                    So Dt1[t] = conj(rx[t:t+M]) . p_w */
-                Dt1 = rade_cadd(Dt1, rade_cmul(rade_cconj(rx[t + n]), acq->p_w[f_idx][n]));
-                Dt2 = rade_cadd(Dt2, rade_cmul(rade_cconj(rx[t + Nmf + n]), acq->p_w[f_idx][n]));
+                RADE_COMP temp1 = rade_cmul(rxconj1[n], acq->p_w[f_idx][n]);
+                RADE_COMP temp2 = rade_cmul(rxconj2[n], acq->p_w[f_idx][n]);
+                Dt1 = rade_cadd(Dt1, temp1);
+                Dt2 = rade_cadd(Dt2, temp2);
             }
 
             acq->Dt1[t][f_idx] = Dt1;
@@ -226,13 +237,24 @@ int rade_acq_check_pilots(rade_acq *acq, const RADE_COMP *rx,
     for (int i = 0; i < Nupdate; i++) {
         int t = rand() % Nmf;
 
+        // Cache cconj operation
+        RADE_COMP rxconj1[RADE_M];
+        RADE_COMP rxconj2[RADE_M];
+        for (int index = 0; index < M; index++)
+        {
+            rxconj1[index] = rade_cconj(rx[t + index]);
+            rxconj2[index] = rade_cconj(rx[t + Nmf + index]);
+        }
+
         for (int f_idx = 0; f_idx < acq->n_fcoarse; f_idx++) {
             RADE_COMP Dt1 = rade_czero();
             RADE_COMP Dt2 = rade_czero();
 
             for (int n = 0; n < M; n++) {
-                Dt1 = rade_cadd(Dt1, rade_cmul(rade_cconj(rx[t + n]), acq->p_w[f_idx][n]));
-                Dt2 = rade_cadd(Dt2, rade_cmul(rade_cconj(rx[t + Nmf + n]), acq->p_w[f_idx][n]));
+                RADE_COMP temp1 = rade_cmul(rxconj1[n], acq->p_w[f_idx][n]);
+                RADE_COMP temp2 = rade_cmul(rxconj2[n], acq->p_w[f_idx][n]);
+                Dt1 = rade_cadd(Dt1, temp1);
+                Dt2 = rade_cadd(Dt2, temp2);
             }
 
             acq->Dt1[t][f_idx] = Dt1;
