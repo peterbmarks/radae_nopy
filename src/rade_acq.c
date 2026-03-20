@@ -118,13 +118,20 @@ int rade_acq_detect_pilots(rade_acq *acq, const RADE_COMP *rx, int *tmax, float 
             RADE_COMP Dt1 = rade_czero();
             RADE_COMP Dt2 = rade_czero();
 
+            RADE_COMP* rxconj1tmp = rxconj1;
+            RADE_COMP* rxconj2tmp = rxconj2;
+            RADE_COMP* p_wtmp = acq->p_w[f_idx];
+
             for (int n = 0; n < M; n++) {
                 /* Note: Python uses np.conj(rx) first, then matmul
                    So Dt1[t] = conj(rx[t:t+M]) . p_w */
-                RADE_COMP temp1 = rade_cmul(rxconj1[n], acq->p_w[f_idx][n]);
-                RADE_COMP temp2 = rade_cmul(rxconj2[n], acq->p_w[f_idx][n]);
-                Dt1 = rade_cadd(Dt1, temp1);
-                Dt2 = rade_cadd(Dt2, temp2);
+                Dt1.real += rxconj1tmp->real * p_wtmp->real - rxconj1tmp->imag * p_wtmp->imag;
+                Dt1.imag += rxconj1tmp->real * p_wtmp->imag - rxconj1tmp->imag * p_wtmp->real;
+                rxconj1tmp++; 
+                Dt2.real += rxconj2tmp->real * p_wtmp->real - rxconj2tmp->imag * p_wtmp->imag;
+                Dt2.imag += rxconj2tmp->real * p_wtmp->imag - rxconj2tmp->imag * p_wtmp->real;
+                rxconj2tmp++;
+                p_wtmp++;
             }
 
             acq->Dt1[t][f_idx] = Dt1;
@@ -249,12 +256,18 @@ int rade_acq_check_pilots(rade_acq *acq, const RADE_COMP *rx,
         for (int f_idx = 0; f_idx < acq->n_fcoarse; f_idx++) {
             RADE_COMP Dt1 = rade_czero();
             RADE_COMP Dt2 = rade_czero();
+            RADE_COMP* rxconj1tmp = rxconj1;
+            RADE_COMP* rxconj2tmp = rxconj2;
+            RADE_COMP* p_wtmp = acq->p_w[f_idx];
 
             for (int n = 0; n < M; n++) {
-                RADE_COMP temp1 = rade_cmul(rxconj1[n], acq->p_w[f_idx][n]);
-                RADE_COMP temp2 = rade_cmul(rxconj2[n], acq->p_w[f_idx][n]);
-                Dt1 = rade_cadd(Dt1, temp1);
-                Dt2 = rade_cadd(Dt2, temp2);
+                Dt1.real += rxconj1tmp->real * p_wtmp->real - rxconj1tmp->imag * p_wtmp->imag;
+                Dt1.imag += rxconj1tmp->real * p_wtmp->imag - rxconj1tmp->imag * p_wtmp->real;
+                rxconj1tmp++; 
+                Dt2.real += rxconj2tmp->real * p_wtmp->real - rxconj2tmp->imag * p_wtmp->imag;
+                Dt2.imag += rxconj2tmp->real * p_wtmp->imag - rxconj2tmp->imag * p_wtmp->real;
+                rxconj2tmp++;
+                p_wtmp++;
             }
 
             acq->Dt1[t][f_idx] = Dt1;
