@@ -41,6 +41,7 @@
 #include <string.h>
 #include <stdio.h>
 
+#include "rade_fargan_config.h"
 #include "rade_api.h"
 #include "rade_tx.h"
 #include "rade_rx.h"

@@ -33,6 +33,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include "rade_fargan_config.h"
 #include "rade_rx.h"
 #include "rade_dec_data.h"
 #include <string.h>

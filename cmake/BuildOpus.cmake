@@ -76,5 +76,13 @@ set_target_properties(opus PROPERTIES
     IMPORTED_IMPLIB   "${BINARY_DIR}/.libs/libopus${CMAKE_STATIC_LIBRARY_SUFFIX}"
 )
 
-include_directories(${SOURCE_DIR}/dnn ${SOURCE_DIR}/celt ${SOURCE_DIR}/include ${SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_BINARY_DIR} ${SOURCE_DIR}/dnn ${SOURCE_DIR}/celt ${SOURCE_DIR}/include ${SOURCE_DIR})
+
+set(RADE_FARGAN_CONFIG_H_FILE "${BINARY_DIR}/config.h")
+set(RADE_FARGAN_ARM_CONFIG_H_FILE "${RADE_FARGAN_CONFIG_H_FILE}")
+set(RADE_FARGAN_X86_CONFIG_H_FILE "${RADE_FARGAN_CONFIG_H_FILE}")
+
 endif(APPLE AND BUILD_OSX_UNIVERSAL)
+
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/rade_fargan_config.h.in" "${CMAKE_CURRENT_BINARY_DIR}/rade_fargan_config.h")
+

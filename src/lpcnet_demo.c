@@ -32,6 +32,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "rade_fargan_config.h"
 #include "arch.h"
 #include "lpcnet.h"
 #include "freq.h"

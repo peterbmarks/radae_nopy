@@ -44,6 +44,7 @@
 #include <math.h>
 #include <getopt.h>
 
+#include "rade_fargan_config.h"
 #include "rade_api.h"
 #include "rade_dsp.h"
 #include "fargan.h"
