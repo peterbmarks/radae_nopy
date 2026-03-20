@@ -126,10 +126,10 @@ int rade_acq_detect_pilots(rade_acq *acq, const RADE_COMP *rx, int *tmax, float 
                 /* Note: Python uses np.conj(rx) first, then matmul
                    So Dt1[t] = conj(rx[t:t+M]) . p_w */
                 Dt1.real += rxconj1tmp->real * p_wtmp->real - rxconj1tmp->imag * p_wtmp->imag;
-                Dt1.imag += rxconj1tmp->real * p_wtmp->imag - rxconj1tmp->imag * p_wtmp->real;
+                Dt1.imag += rxconj1tmp->real * p_wtmp->imag + rxconj1tmp->imag * p_wtmp->real;
                 rxconj1tmp++; 
                 Dt2.real += rxconj2tmp->real * p_wtmp->real - rxconj2tmp->imag * p_wtmp->imag;
-                Dt2.imag += rxconj2tmp->real * p_wtmp->imag - rxconj2tmp->imag * p_wtmp->real;
+                Dt2.imag += rxconj2tmp->real * p_wtmp->imag + rxconj2tmp->imag * p_wtmp->real;
                 rxconj2tmp++;
                 p_wtmp++;
             }
@@ -262,10 +262,10 @@ int rade_acq_check_pilots(rade_acq *acq, const RADE_COMP *rx,
 
             for (int n = 0; n < M; n++) {
                 Dt1.real += rxconj1tmp->real * p_wtmp->real - rxconj1tmp->imag * p_wtmp->imag;
-                Dt1.imag += rxconj1tmp->real * p_wtmp->imag - rxconj1tmp->imag * p_wtmp->real;
+                Dt1.imag += rxconj1tmp->real * p_wtmp->imag + rxconj1tmp->imag * p_wtmp->real;
                 rxconj1tmp++; 
                 Dt2.real += rxconj2tmp->real * p_wtmp->real - rxconj2tmp->imag * p_wtmp->imag;
-                Dt2.imag += rxconj2tmp->real * p_wtmp->imag - rxconj2tmp->imag * p_wtmp->real;
+                Dt2.imag += rxconj2tmp->real * p_wtmp->imag + rxconj2tmp->imag * p_wtmp->real;
                 rxconj2tmp++;
                 p_wtmp++;
             }
