@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/cmake_install.cmake",
+		"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

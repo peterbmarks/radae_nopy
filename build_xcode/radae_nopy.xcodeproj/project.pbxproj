@@ -1,0 +1,3419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		5348A55545BAD48ED0395E35 /* build_opus */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 12FF5C92BB5843368539C5B6 /* Build configuration list for PBXAggregateTarget "build_opus" */;
+			buildPhases = (
+				DC1EBCEB3C333591FA20F55B /* Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-mkdir */,
+				D31D640DE6045575E611A1E5 /* Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-download */,
+				999D5468B49D825CC4A81CA7 /* Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-update */,
+				0338ED1569965A6223BEF506 /* Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-patch */,
+				4C0EF544247938C6BEAD2F10 /* Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-configure */,
+				65464E9BA23037460D4B959C /* Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-build */,
+				DCAB310A843EA34C03F0E670 /* Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-install */,
+				2A8C831C57A956AD69330BC5 /* Generate CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-complete */,
+				5E2407A359B85DB3D4301D38 /* Generate CMakeFiles/build_opus */,
+			);
+			dependencies = (
+				0ABB64B3B19C4E74A97BB32D /* PBXTargetDependency */,
+			);
+			name = build_opus;
+			productName = build_opus;
+		};
+		91AC7110E2242C49D7F94D3F /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = F5FFC6DFE4F24DC9A876987F /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				FB7682CC2F68D6CAA0F7E71B /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		A434E1CDB57783F5D79F81E9 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 372C9DED94D841C4876A0D9B /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				AD4693244B4B5BDC4A030A5C /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				58F4EAE5D1514DC4A55A0777 /* PBXTargetDependency */,
+				5B2F367118F547C18156CB42 /* PBXTargetDependency */,
+				ACDF0C39348A4B5D901B461D /* PBXTargetDependency */,
+				00B535780A21424FB94C72DC /* PBXTargetDependency */,
+				AE3DC194E16043B8AC1FB384 /* PBXTargetDependency */,
+				C00D135F392D466885C1D24D /* PBXTargetDependency */,
+				5B8F5D60984448CDBAD6846F /* PBXTargetDependency */,
+				73D5118AED0549E9BF7BFB6E /* PBXTargetDependency */,
+				587CE872EEC345F780FA48C7 /* PBXTargetDependency */,
+				8F70909E3D714823A50DEB39 /* PBXTargetDependency */,
+				53D15A41B4CC4482B97BF2F6 /* PBXTargetDependency */,
+				FD00573CC6CE4C31BFCFE201 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		01CB9B7925FC41559F56C059 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_bpf.c */ = {isa = PBXBuildFile; fileRef = 5281E1CE3F8247DA99BC9F91 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_bpf.c */; };
+		03F1D6518037497D9E8FE60C /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_demod_wav.c */ = {isa = PBXBuildFile; fileRef = 18DC5C7C95D24B5C90D62D73 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_demod_wav.c */; };
+		04D5AF603C2442ED8464F8C8 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/lpcnet_demo.c */ = {isa = PBXBuildFile; fileRef = 0A2F3D770C2149B98CDD65A9 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/lpcnet_demo.c */; };
+		0FDD9275274F47E1B6385D85 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = D04A5A35C6ED483285D4669E /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */; };
+		118634E8E4B34958A06A1412 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_acq.c */ = {isa = PBXBuildFile; fileRef = BF129ECB2DBB4F01B29D3361 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_acq.c */; };
+		12CAF5375199499CB158D5A6 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_callsign_test.c */ = {isa = PBXBuildFile; fileRef = 667E2C23C7C6498D962505A7 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_callsign_test.c */; };
+		182A0087860B4F37BFBA0A26 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dec.c */ = {isa = PBXBuildFile; fileRef = E1D0B0897C284CF4BBC8632C /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dec.c */; };
+		1B99D6C4D87F434BBCC9EAA8 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = EA7D6F05C9074E4680CF8212 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */; };
+		34521E3F89CA4B2383C50073 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_api_nopy.c */ = {isa = PBXBuildFile; fileRef = 1F15148FA35A407AB5BE52E6 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_api_nopy.c */; };
+		3CC589F8239E47A08D6074B5 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/kiss_fft.c */ = {isa = PBXBuildFile; fileRef = E02E82A54E5D4FDA8940BBD1 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/kiss_fft.c */; };
+		4E417AC1C040427BB731A761 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 3066A5C5A9A04DBFB17B52E1 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */; };
+		58D1F6D8CCED4499B1E9FD03 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 6F5F5232F5E64BA9917E1023 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */; };
+		65EB45CBA3B64374AB01854B /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dec_data.c */ = {isa = PBXBuildFile; fileRef = DEC413EDCB1B4188B5130117 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dec_data.c */; };
+		67E1971188C2461F8BF225C8 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = F7CE0DBEB6D244C1B7C928BF /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */; };
+		828408C074AE4CDFB301ED3F /* /Volumes/LaCie2TB/Developer/radae_nopy/src/kiss_fftr.c */ = {isa = PBXBuildFile; fileRef = 297C345838C84EBB86934582 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/kiss_fftr.c */; };
+		8AF0F3F4093944168121EAE7 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_tx.c */ = {isa = PBXBuildFile; fileRef = A74782B326D84AF18E3A9F04 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_tx.c */; };
+		8AFFAB64B120432583BB4421 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = A1C9606031D44D67828680E8 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */; };
+		8FA4F78FAEF74F0B8A995BE0 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 68CA1279126F42D39AE68A43 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */; };
+		9F78EF1C07174BDA82009BFF /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_rx.c */ = {isa = PBXBuildFile; fileRef = ED31AD07EEE04CEEBC75F8C9 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_rx.c */; };
+		A17A713F0029489DA9F3F331 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_enc_data.c */ = {isa = PBXBuildFile; fileRef = EC1D02814D2B4F87B4C4ECF9 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_enc_data.c */; };
+		A8D511E951D945AD921B62CD /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = D834220234E1433B939C5DD6 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */; };
+		AE22BC034D104BE091CBED79 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/real2iq.c */ = {isa = PBXBuildFile; fileRef = A988009F31144F5698E2E6E4 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/real2iq.c */; };
+		BCE45C60765E45E6BF5B7818 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/radae_rx_nopy.c */ = {isa = PBXBuildFile; fileRef = 32D6951C2CE9456EA5098DFA /* /Volumes/LaCie2TB/Developer/radae_nopy/src/radae_rx_nopy.c */; };
+		CDB0B7B38C894F488C9D62CB /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_bpf_test.c */ = {isa = PBXBuildFile; fileRef = 4C12512FBF314241BE2D1708 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_bpf_test.c */; };
+		CE5B3026DD994B89B8406550 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = B35C4928504045BA8228AB56 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */; };
+		D0B8A7AD18BF4FB0BFCB6589 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_ofdm.c */ = {isa = PBXBuildFile; fileRef = 41128299EDF64231AFDC555B /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_ofdm.c */; };
+		E9AA304E0F6E40BB948E2D36 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/radae_tx_nopy.c */ = {isa = PBXBuildFile; fileRef = B0D7C24086FF4979A705ABA0 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/radae_tx_nopy.c */; };
+		EECC0495A5C0415FA064F3B5 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_ber_test.c */ = {isa = PBXBuildFile; fileRef = 8756284D98604FDA8B03A203 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_ber_test.c */; };
+		F3623EFFC96445F7BA89493E /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dsp.c */ = {isa = PBXBuildFile; fileRef = FE4C1AC95DDE4A198D9D7EAC /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dsp.c */; };
+		F9B310B526844350B27C9605 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 79078BDACEEF49D3B327799E /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */; };
+		FAD750B94D174DBD95A15D7D /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_enc.c */ = {isa = PBXBuildFile; fileRef = 80313FE9984647EDB9C0AE44 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_enc.c */; };
+		FF6E502015AB479D9FEE8271 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_modulate_wav.c */ = {isa = PBXBuildFile; fileRef = AF4A6DD27FC14EFEA21E7222 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_modulate_wav.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		42A59EECE9E7490A9B2BE5AB /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		6DD144EBF98E49CE88409D88 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		88E89745C1654BBA8D5ADC58 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		EF8A05ACF2344EB187D03127 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		09267C64DC7A49E39A46D720 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5348A55545BAD48ED0395E35;
+			remoteInfo = build_opus;
+		};
+		1BF5F563F4FC4418887EE8D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5348A55545BAD48ED0395E35;
+			remoteInfo = build_opus;
+		};
+		260850CE81654619A2D9868E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5348A55545BAD48ED0395E35;
+			remoteInfo = build_opus;
+		};
+		26EDD446BD244F6FAD432365 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5348A55545BAD48ED0395E35;
+			remoteInfo = build_opus;
+		};
+		2892343534524BECB2DDDBA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91AC7110E2242C49D7F94D3F;
+			remoteInfo = ZERO_CHECK;
+		};
+		28FF86ACCBEC4305A9F5813B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43211FB65DDA53AA5D2DCE63;
+			remoteInfo = rade_ber_test;
+		};
+		2BC7AEE273584EB485C975B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4510BA019C7B89CAA26E2CF1;
+			remoteInfo = rade_demod_wav;
+		};
+		2E66B5F8E4A847B7A3950615 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91AC7110E2242C49D7F94D3F;
+			remoteInfo = ZERO_CHECK;
+		};
+		34B7F52F515D441FB11C75B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E546D471B5CF1DFDAE4EE0F;
+			remoteInfo = rade;
+		};
+		35AE8977C8AA4CDF96CB04EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9CA470B558AEFDCCF93A476;
+			remoteInfo = radae_rx;
+		};
+		370DE78B9D874639AB1696DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EAF3AAE63ED5594C5A860C8;
+			remoteInfo = rade_callsign_test;
+		};
+		411A22F2CC2A4A82BA1D6952 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5348A55545BAD48ED0395E35;
+			remoteInfo = build_opus;
+		};
+		425241100B62492E8BDA6258 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71AF4FA75306E0D90F1FF208;
+			remoteInfo = rade_modulate_wav;
+		};
+		4A409615BCEE4D5D86A01C40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5348A55545BAD48ED0395E35;
+			remoteInfo = build_opus;
+		};
+		50CA0D4773B245D6A967F36A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E546D471B5CF1DFDAE4EE0F;
+			remoteInfo = rade;
+		};
+		5306EF2860FA4FFCBD458DFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5348A55545BAD48ED0395E35;
+			remoteInfo = build_opus;
+		};
+		54E2ECBE40CB4C03814E3C13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91AC7110E2242C49D7F94D3F;
+			remoteInfo = ZERO_CHECK;
+		};
+		5A0D0704C01D455DBC018DD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91AC7110E2242C49D7F94D3F;
+			remoteInfo = ZERO_CHECK;
+		};
+		6F22E149ABDC4EBEA2A91EE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E546D471B5CF1DFDAE4EE0F;
+			remoteInfo = rade;
+		};
+		7708535E2CFB4C7CA1854BD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 360945D10D4BF9E33E167BF2;
+			remoteInfo = lpcnet_demo;
+		};
+		81E6EAD147444823AAB49087 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93FF9EFAF6DB3FB6AC9AD515;
+			remoteInfo = rade_bpf_test;
+		};
+		84782C25447648C7803066EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49C8B465D3940513FE48CDD1;
+			remoteInfo = radae_tx;
+		};
+		8CD98A2EFE904D0AB281FB55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E546D471B5CF1DFDAE4EE0F;
+			remoteInfo = rade;
+		};
+		973A46943CFB4B05B2F92753 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91AC7110E2242C49D7F94D3F;
+			remoteInfo = ZERO_CHECK;
+		};
+		9F81B524FFD04597A2792903 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91AC7110E2242C49D7F94D3F;
+			remoteInfo = ZERO_CHECK;
+		};
+		B37B54117F9D4D9B80A5B523 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E546D471B5CF1DFDAE4EE0F;
+			remoteInfo = rade;
+		};
+		BB770CE515D9475EB7DFC2D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91AC7110E2242C49D7F94D3F;
+			remoteInfo = ZERO_CHECK;
+		};
+		C1660C20B7D049E38FEB581B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 115BC47DD57AFBC00FC1E1A9;
+			remoteInfo = real2iq;
+		};
+		C72E63577AC64935AE4570CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91AC7110E2242C49D7F94D3F;
+			remoteInfo = ZERO_CHECK;
+		};
+		CB9CF4EC09C6449593C4E19D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E546D471B5CF1DFDAE4EE0F;
+			remoteInfo = rade;
+		};
+		D09DA303857D4CBB9570A3EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5348A55545BAD48ED0395E35;
+			remoteInfo = build_opus;
+		};
+		DADEAF5321D946638CA4756F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91AC7110E2242C49D7F94D3F;
+			remoteInfo = ZERO_CHECK;
+		};
+		DB721224BE2340DD97B2BCDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5348A55545BAD48ED0395E35;
+			remoteInfo = build_opus;
+		};
+		E26F951AE05743B893E5EC88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91AC7110E2242C49D7F94D3F;
+			remoteInfo = ZERO_CHECK;
+		};
+		E3F84D80D4F440A6A1A6547A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E546D471B5CF1DFDAE4EE0F;
+			remoteInfo = rade;
+		};
+		EA4F357A5CF64902AAFD8978 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5348A55545BAD48ED0395E35;
+			remoteInfo = build_opus;
+		};
+		EB1E12288AB14DD9B84575E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91AC7110E2242C49D7F94D3F;
+			remoteInfo = ZERO_CHECK;
+		};
+		F3D695A4E2344236AF384ED4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E546D471B5CF1DFDAE4EE0F;
+			remoteInfo = rade;
+		};
+		FEE5E04803FD4BB0BE63C4F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91AC7110E2242C49D7F94D3F;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A2F3D770C2149B98CDD65A9 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/lpcnet_demo.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = lpcnet_demo.c; path = src/lpcnet_demo.c; sourceTree = SOURCE_ROOT; };
+		18DC5C7C95D24B5C90D62D73 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_demod_wav.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_demod_wav.c; path = src/rade_demod_wav.c; sourceTree = SOURCE_ROOT; };
+		1F15148FA35A407AB5BE52E6 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_api_nopy.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_api_nopy.c; path = src/rade_api_nopy.c; sourceTree = SOURCE_ROOT; };
+		297C345838C84EBB86934582 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/kiss_fftr.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = kiss_fftr.c; path = src/kiss_fftr.c; sourceTree = SOURCE_ROOT; };
+		3066A5C5A9A04DBFB17B52E1 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		32D6951C2CE9456EA5098DFA /* /Volumes/LaCie2TB/Developer/radae_nopy/src/radae_rx_nopy.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = radae_rx_nopy.c; path = src/radae_rx_nopy.c; sourceTree = SOURCE_ROOT; };
+		3A700F8E8687421EADCF47C8 /* rade_callsign_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = rade_callsign_test; sourceTree = BUILT_PRODUCTS_DIR; };
+		41128299EDF64231AFDC555B /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_ofdm.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_ofdm.c; path = src/rade_ofdm.c; sourceTree = SOURCE_ROOT; };
+		453C404D1BBD44C4A0CD9CF1 /* rade_modulate_wav */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = rade_modulate_wav; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C12512FBF314241BE2D1708 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_bpf_test.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_bpf_test.c; path = src/rade_bpf_test.c; sourceTree = SOURCE_ROOT; };
+		5281E1CE3F8247DA99BC9F91 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_bpf.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_bpf.c; path = src/rade_bpf.c; sourceTree = SOURCE_ROOT; };
+		667E2C23C7C6498D962505A7 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_callsign_test.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_callsign_test.c; path = src/rade_callsign_test.c; sourceTree = SOURCE_ROOT; };
+		68CA1279126F42D39AE68A43 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		6F5F5232F5E64BA9917E1023 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		746DD71E87CB4262824B3D7D /* radae_tx */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = radae_tx; sourceTree = BUILT_PRODUCTS_DIR; };
+		79078BDACEEF49D3B327799E /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		7B24E9F0F5884CEB961EBA50 /* /Volumes/LaCie2TB/Developer/radae_nopy/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		80313FE9984647EDB9C0AE44 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_enc.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_enc.c; path = src/rade_enc.c; sourceTree = SOURCE_ROOT; };
+		813D2191DBBF4467A2DC6836 /* lpcnet_demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = lpcnet_demo; sourceTree = BUILT_PRODUCTS_DIR; };
+		8756284D98604FDA8B03A203 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_ber_test.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_ber_test.c; path = src/rade_ber_test.c; sourceTree = SOURCE_ROOT; };
+		931A92331A2F4442B8CFF101 /* real2iq */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = real2iq; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1C9606031D44D67828680E8 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		A74782B326D84AF18E3A9F04 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_tx.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_tx.c; path = src/rade_tx.c; sourceTree = SOURCE_ROOT; };
+		A988009F31144F5698E2E6E4 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/real2iq.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = real2iq.c; path = src/real2iq.c; sourceTree = SOURCE_ROOT; };
+		AF4A6DD27FC14EFEA21E7222 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_modulate_wav.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_modulate_wav.c; path = src/rade_modulate_wav.c; sourceTree = SOURCE_ROOT; };
+		B0D7C24086FF4979A705ABA0 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/radae_tx_nopy.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = radae_tx_nopy.c; path = src/radae_tx_nopy.c; sourceTree = SOURCE_ROOT; };
+		B35C4928504045BA8228AB56 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		BF129ECB2DBB4F01B29D3361 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_acq.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_acq.c; path = src/rade_acq.c; sourceTree = SOURCE_ROOT; };
+		D04A5A35C6ED483285D4669E /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D372325059794A6C8EBB1060 /* radae_rx */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = radae_rx; sourceTree = BUILT_PRODUCTS_DIR; };
+		D688EB136FC5498A8A07CBD8 /* /Volumes/LaCie2TB/Developer/radae_nopy/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D834220234E1433B939C5DD6 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		DAC31B6F967F4C99BF45B27A /* rade_demod_wav */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = rade_demod_wav; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEC413EDCB1B4188B5130117 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dec_data.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_dec_data.c; path = src/rade_dec_data.c; sourceTree = SOURCE_ROOT; };
+		E02E82A54E5D4FDA8940BBD1 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/kiss_fft.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = kiss_fft.c; path = src/kiss_fft.c; sourceTree = SOURCE_ROOT; };
+		E1D0B0897C284CF4BBC8632C /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dec.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_dec.c; path = src/rade_dec.c; sourceTree = SOURCE_ROOT; };
+		E5E11AE475FC4C75AFD0E9D8 /* rade_ber_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = rade_ber_test; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA7D6F05C9074E4680CF8212 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		EBF474108BD44F90BD2119E7 /* rade_bpf_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = rade_bpf_test; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1D02814D2B4F87B4C4ECF9 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_enc_data.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_enc_data.c; path = src/rade_enc_data.c; sourceTree = SOURCE_ROOT; };
+		ED31AD07EEE04CEEBC75F8C9 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_rx.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_rx.c; path = src/rade_rx.c; sourceTree = SOURCE_ROOT; };
+		F7CE0DBEB6D244C1B7C928BF /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		FDC91629A8FA4C1BBB533930 /* rade */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = librade.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE4C1AC95DDE4A198D9D7EAC /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dsp.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = rade_dsp.c; path = src/rade_dsp.c; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B45CFCAA94D4BA5B4E7C7E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5144A29097A3421E930D9F65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55986D3BDB3146C49041F1E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61424364A47E4BEBB43032F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92DE59222BAB462AAB07FD08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE9EC69F0AFC4FB1BF595DB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAFA23E4891C4DE89DA9B4F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4235C46006A4BFF9BA21FEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9026B670EC7403D9971A739 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA989B06E8C14680AA664DA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0406005EB7B5448EBBB94EB2 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				0A2F3D770C2149B98CDD65A9 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/lpcnet_demo.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		057690AD84BC4C62B2D5F7A5 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				E02E82A54E5D4FDA8940BBD1 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/kiss_fft.c */,
+				297C345838C84EBB86934582 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/kiss_fftr.c */,
+				4C12512FBF314241BE2D1708 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_bpf_test.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		0DC0B92051464D69AE68899A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0F1DF6EE77994EDB9A0D4D9F /* lpcnet_demo */ = {
+			isa = PBXGroup;
+			children = (
+				0406005EB7B5448EBBB94EB2 /* Source Files */,
+				D04A5A35C6ED483285D4669E /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */,
+			);
+			name = lpcnet_demo;
+			sourceTree = "<group>";
+		};
+		10C6E6C1BC7B4EF882ACB80E /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				32D6951C2CE9456EA5098DFA /* /Volumes/LaCie2TB/Developer/radae_nopy/src/radae_rx_nopy.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		14AC80F2F1904555A88E22AD /* real2iq */ = {
+			isa = PBXGroup;
+			children = (
+				C161AD7B967B402D98E2DB1E /* Source Files */,
+				EA7D6F05C9074E4680CF8212 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */,
+			);
+			name = real2iq;
+			sourceTree = "<group>";
+		};
+		14CE7BE2CEFA4A8F8AC0002D /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF129ECB2DBB4F01B29D3361 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_acq.c */,
+				1F15148FA35A407AB5BE52E6 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_api_nopy.c */,
+				5281E1CE3F8247DA99BC9F91 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_bpf.c */,
+				E1D0B0897C284CF4BBC8632C /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dec.c */,
+				DEC413EDCB1B4188B5130117 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dec_data.c */,
+				FE4C1AC95DDE4A198D9D7EAC /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dsp.c */,
+				80313FE9984647EDB9C0AE44 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_enc.c */,
+				EC1D02814D2B4F87B4C4ECF9 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_enc_data.c */,
+				41128299EDF64231AFDC555B /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_ofdm.c */,
+				ED31AD07EEE04CEEBC75F8C9 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_rx.c */,
+				A74782B326D84AF18E3A9F04 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_tx.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		1E417BB6FC474237B036974B /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF4A6DD27FC14EFEA21E7222 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_modulate_wav.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		20D1268311134D19961A7924 /* rade_ber_test */ = {
+			isa = PBXGroup;
+			children = (
+				E05FE257B7194B39B4A77C36 /* Source Files */,
+				F7CE0DBEB6D244C1B7C928BF /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */,
+			);
+			name = rade_ber_test;
+			sourceTree = "<group>";
+		};
+		212A8C8B36B44282BC39C81C /* radae_tx */ = {
+			isa = PBXGroup;
+			children = (
+				A64E3B38C81F4466AD1602A0 /* Source Files */,
+				68CA1279126F42D39AE68A43 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */,
+			);
+			name = radae_tx;
+			sourceTree = "<group>";
+		};
+		2C22BDA5791443549CEC3105 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				813D2191DBBF4467A2DC6836 /* lpcnet_demo */,
+				D372325059794A6C8EBB1060 /* radae_rx */,
+				746DD71E87CB4262824B3D7D /* radae_tx */,
+				FDC91629A8FA4C1BBB533930 /* rade */,
+				E5E11AE475FC4C75AFD0E9D8 /* rade_ber_test */,
+				EBF474108BD44F90BD2119E7 /* rade_bpf_test */,
+				3A700F8E8687421EADCF47C8 /* rade_callsign_test */,
+				DAC31B6F967F4C99BF45B27A /* rade_demod_wav */,
+				453C404D1BBD44C4A0CD9CF1 /* rade_modulate_wav */,
+				931A92331A2F4442B8CFF101 /* real2iq */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2ECC5875B4584602AF6C9948 /* rade_demod_wav */ = {
+			isa = PBXGroup;
+			children = (
+				E19331A3C81443AEB169F4CF /* Source Files */,
+				6F5F5232F5E64BA9917E1023 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */,
+			);
+			name = rade_demod_wav;
+			sourceTree = "<group>";
+		};
+		3189E687156948DA8BF24628 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				851A9EE4648349F6A64E67AA /* CMake Rules */,
+				D688EB136FC5498A8A07CBD8 /* /Volumes/LaCie2TB/Developer/radae_nopy/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		4ADCDACF236B477B961CBAA0 /* rade_callsign_test */ = {
+			isa = PBXGroup;
+			children = (
+				FC6CA3EC2E584A55970DA23F /* Source Files */,
+				79078BDACEEF49D3B327799E /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */,
+			);
+			name = rade_callsign_test;
+			sourceTree = "<group>";
+		};
+		54BA6CB6650143F5924A417B /* rade_bpf_test */ = {
+			isa = PBXGroup;
+			children = (
+				057690AD84BC4C62B2D5F7A5 /* Source Files */,
+				3066A5C5A9A04DBFB17B52E1 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */,
+			);
+			name = rade_bpf_test;
+			sourceTree = "<group>";
+		};
+		7E144463451448C8A1ADBE2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		851A9EE4648349F6A64E67AA /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		A56F899A521F4019A38B8942 /* rade_modulate_wav */ = {
+			isa = PBXGroup;
+			children = (
+				1E417BB6FC474237B036974B /* Source Files */,
+				A1C9606031D44D67828680E8 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */,
+			);
+			name = rade_modulate_wav;
+			sourceTree = "<group>";
+		};
+		A64E3B38C81F4466AD1602A0 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				B0D7C24086FF4979A705ABA0 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/radae_tx_nopy.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		AA7E0288C54F449E986DE66D /* rade */ = {
+			isa = PBXGroup;
+			children = (
+				14CE7BE2CEFA4A8F8AC0002D /* Source Files */,
+				B35C4928504045BA8228AB56 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */,
+			);
+			name = rade;
+			sourceTree = "<group>";
+		};
+		B66A00C66CBB44CF976BB3C0 /* radae_rx */ = {
+			isa = PBXGroup;
+			children = (
+				10C6E6C1BC7B4EF882ACB80E /* Source Files */,
+				D834220234E1433B939C5DD6 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/CMakeLists.txt */,
+			);
+			name = radae_rx;
+			sourceTree = "<group>";
+		};
+		C161AD7B967B402D98E2DB1E /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				A988009F31144F5698E2E6E4 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/real2iq.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		D162EEB038CA4A10BCDBD09A /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		DAA3F4FE5E48468AAE744F74 = {
+			isa = PBXGroup;
+			children = (
+				3189E687156948DA8BF24628 /* ALL_BUILD */,
+				FC7A9364B098454C966ED03A /* build_opus */,
+				0F1DF6EE77994EDB9A0D4D9F /* lpcnet_demo */,
+				B66A00C66CBB44CF976BB3C0 /* radae_rx */,
+				212A8C8B36B44282BC39C81C /* radae_tx */,
+				AA7E0288C54F449E986DE66D /* rade */,
+				20D1268311134D19961A7924 /* rade_ber_test */,
+				54BA6CB6650143F5924A417B /* rade_bpf_test */,
+				4ADCDACF236B477B961CBAA0 /* rade_callsign_test */,
+				2ECC5875B4584602AF6C9948 /* rade_demod_wav */,
+				A56F899A521F4019A38B8942 /* rade_modulate_wav */,
+				14AC80F2F1904555A88E22AD /* real2iq */,
+				2C22BDA5791443549CEC3105 /* Products */,
+				7E144463451448C8A1ADBE2E /* Frameworks */,
+				0DC0B92051464D69AE68899A /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		E05FE257B7194B39B4A77C36 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				8756284D98604FDA8B03A203 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_ber_test.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		E19331A3C81443AEB169F4CF /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				18DC5C7C95D24B5C90D62D73 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_demod_wav.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		FC6CA3EC2E584A55970DA23F /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				667E2C23C7C6498D962505A7 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_callsign_test.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		FC7A9364B098454C966ED03A /* build_opus */ = {
+			isa = PBXGroup;
+			children = (
+				D162EEB038CA4A10BCDBD09A /* CMake Rules */,
+				7B24E9F0F5884CEB961EBA50 /* /Volumes/LaCie2TB/Developer/radae_nopy/CMakeLists.txt */,
+			);
+			name = build_opus;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		115BC47DD57AFBC00FC1E1A9 /* real2iq */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0E27C8A2E4A4221B3E73C75 /* Build configuration list for PBXNativeTarget "real2iq" */;
+			buildPhases = (
+				90DEDD985EA54F95848EDABF /* Sources */,
+				61424364A47E4BEBB43032F3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				090EE3C91B184E17BD94E3A1 /* PBXTargetDependency */,
+			);
+			name = real2iq;
+			productName = real2iq;
+			productReference = 931A92331A2F4442B8CFF101 /* real2iq */;
+			productType = "com.apple.product-type.tool";
+		};
+		2EAF3AAE63ED5594C5A860C8 /* rade_callsign_test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFC72CB8738146949949002E /* Build configuration list for PBXNativeTarget "rade_callsign_test" */;
+			buildPhases = (
+				8C1EBE8809114E7FAA4BDC9C /* Sources */,
+				E4235C46006A4BFF9BA21FEC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27B05E74F6BC4954ABAA364A /* PBXTargetDependency */,
+				CEF8AD2D195F4EA288ED69B0 /* PBXTargetDependency */,
+				3A31B5D52329457BB11ECB4E /* PBXTargetDependency */,
+			);
+			name = rade_callsign_test;
+			productName = rade_callsign_test;
+			productReference = 3A700F8E8687421EADCF47C8 /* rade_callsign_test */;
+			productType = "com.apple.product-type.tool";
+		};
+		360945D10D4BF9E33E167BF2 /* lpcnet_demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2958C9F07D0040899CEEC542 /* Build configuration list for PBXNativeTarget "lpcnet_demo" */;
+			buildPhases = (
+				7F0D7656547C4FEAA01DCAD6 /* Sources */,
+				5144A29097A3421E930D9F65 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E38AE7FA546A4422A3A05945 /* PBXTargetDependency */,
+				A719DEAB823A4E11AC9EE9FF /* PBXTargetDependency */,
+			);
+			name = lpcnet_demo;
+			productName = lpcnet_demo;
+			productReference = 813D2191DBBF4467A2DC6836 /* lpcnet_demo */;
+			productType = "com.apple.product-type.tool";
+		};
+		43211FB65DDA53AA5D2DCE63 /* rade_ber_test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98686F570BF74621B2964758 /* Build configuration list for PBXNativeTarget "rade_ber_test" */;
+			buildPhases = (
+				823DA1A0A65849A593DC173A /* Sources */,
+				1B45CFCAA94D4BA5B4E7C7E0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				020BC30B35494B7A8764E742 /* PBXTargetDependency */,
+				B8E420712E33418591126558 /* PBXTargetDependency */,
+				4A45EAFEDDC244998065B319 /* PBXTargetDependency */,
+			);
+			name = rade_ber_test;
+			productName = rade_ber_test;
+			productReference = E5E11AE475FC4C75AFD0E9D8 /* rade_ber_test */;
+			productType = "com.apple.product-type.tool";
+		};
+		4510BA019C7B89CAA26E2CF1 /* rade_demod_wav */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 662125507C3C42E28BA9EDF4 /* Build configuration list for PBXNativeTarget "rade_demod_wav" */;
+			buildPhases = (
+				B0D42D50D4194AC2AF3C0DBC /* Sources */,
+				BE9EC69F0AFC4FB1BF595DB7 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C75417CFD40946AC89302E2E /* PBXTargetDependency */,
+				66D724A10D214FEA85F1DD47 /* PBXTargetDependency */,
+				24DE582B02B34E319D8CA384 /* PBXTargetDependency */,
+			);
+			name = rade_demod_wav;
+			productName = rade_demod_wav;
+			productReference = DAC31B6F967F4C99BF45B27A /* rade_demod_wav */;
+			productType = "com.apple.product-type.tool";
+		};
+		49C8B465D3940513FE48CDD1 /* radae_tx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68D981B61073464989E36D76 /* Build configuration list for PBXNativeTarget "radae_tx" */;
+			buildPhases = (
+				8414FED9A4A8401990C1A59C /* Sources */,
+				DAFA23E4891C4DE89DA9B4F2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C787F7454EC74CF9B2E65616 /* PBXTargetDependency */,
+				3B8132E417AD4FDCB56461D8 /* PBXTargetDependency */,
+				F7C6206DCBF14870803CC4B0 /* PBXTargetDependency */,
+			);
+			name = radae_tx;
+			productName = radae_tx;
+			productReference = 746DD71E87CB4262824B3D7D /* radae_tx */;
+			productType = "com.apple.product-type.tool";
+		};
+		4E546D471B5CF1DFDAE4EE0F /* rade */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97D7146F6A024A78A7FC65B3 /* Build configuration list for PBXNativeTarget "rade" */;
+			buildPhases = (
+				E3A0DE9AB92844F3A85C25C0 /* Sources */,
+				FA989B06E8C14680AA664DA3 /* Frameworks */,
+				2FFDFB9AE2157D74C6256700 /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C458CB35BC6245F898096790 /* PBXTargetDependency */,
+				FD5F47191A8D4284B3F9D40A /* PBXTargetDependency */,
+			);
+			name = rade;
+			productName = rade;
+			productReference = FDC91629A8FA4C1BBB533930 /* rade */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		71AF4FA75306E0D90F1FF208 /* rade_modulate_wav */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8827E300662496E920A0FF8 /* Build configuration list for PBXNativeTarget "rade_modulate_wav" */;
+			buildPhases = (
+				7E7D80F118984B4697C42EBE /* Sources */,
+				E9026B670EC7403D9971A739 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B178F27443E74B469EE51A22 /* PBXTargetDependency */,
+				8DBE0D32B8944BCFAB5C5F98 /* PBXTargetDependency */,
+				C48B5CE48F974E8EAA78CE85 /* PBXTargetDependency */,
+			);
+			name = rade_modulate_wav;
+			productName = rade_modulate_wav;
+			productReference = 453C404D1BBD44C4A0CD9CF1 /* rade_modulate_wav */;
+			productType = "com.apple.product-type.tool";
+		};
+		93FF9EFAF6DB3FB6AC9AD515 /* rade_bpf_test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E255303333E4D0BA63ADFC2 /* Build configuration list for PBXNativeTarget "rade_bpf_test" */;
+			buildPhases = (
+				37667C98C46F43F2B22769FE /* Sources */,
+				55986D3BDB3146C49041F1E5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7ED3C60C18B4484B36230AC /* PBXTargetDependency */,
+				F7E60610B0614BD3988DAAE3 /* PBXTargetDependency */,
+				9B510046C9114DF69B2F45D5 /* PBXTargetDependency */,
+			);
+			name = rade_bpf_test;
+			productName = rade_bpf_test;
+			productReference = EBF474108BD44F90BD2119E7 /* rade_bpf_test */;
+			productType = "com.apple.product-type.tool";
+		};
+		A9CA470B558AEFDCCF93A476 /* radae_rx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D4761EAF5B44E00A2597452 /* Build configuration list for PBXNativeTarget "radae_rx" */;
+			buildPhases = (
+				766237BF2029447B90143391 /* Sources */,
+				92DE59222BAB462AAB07FD08 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49D3AA91FDA74D40A213AFF9 /* PBXTargetDependency */,
+				BFAF1CF1649A4FA3A78F65EF /* PBXTargetDependency */,
+				00D7D3E2969E4D41A787DF51 /* PBXTargetDependency */,
+			);
+			name = radae_rx;
+			productName = radae_rx;
+			productReference = D372325059794A6C8EBB1060 /* radae_rx */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7264D0ABA54B4E7B90AC6660 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2640;
+			};
+			buildConfigurationList = 6FF5AB9A0C8C4342AC44D9A8 /* Build configuration list for PBXProject "radae_nopy" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				88E89745C1654BBA8D5ADC58 /* Debug */,
+				42A59EECE9E7490A9B2BE5AB /* Release */,
+				EF8A05ACF2344EB187D03127 /* MinSizeRel */,
+				6DD144EBF98E49CE88409D88 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = DAA3F4FE5E48468AAE744F74;
+			projectDirPath = /Volumes/LaCie2TB/Developer/radae_nopy;
+			projectRoot = "";
+			targets = (
+				A434E1CDB57783F5D79F81E9 /* ALL_BUILD */,
+				5348A55545BAD48ED0395E35 /* build_opus */,
+				360945D10D4BF9E33E167BF2 /* lpcnet_demo */,
+				A9CA470B558AEFDCCF93A476 /* radae_rx */,
+				49C8B465D3940513FE48CDD1 /* radae_tx */,
+				4E546D471B5CF1DFDAE4EE0F /* rade */,
+				43211FB65DDA53AA5D2DCE63 /* rade_ber_test */,
+				93FF9EFAF6DB3FB6AC9AD515 /* rade_bpf_test */,
+				2EAF3AAE63ED5594C5A860C8 /* rade_callsign_test */,
+				4510BA019C7B89CAA26E2CF1 /* rade_demod_wav */,
+				71AF4FA75306E0D90F1FF208 /* rade_modulate_wav */,
+				115BC47DD57AFBC00FC1E1A9 /* real2iq */,
+				91AC7110E2242C49D7F94D3F /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0338ED1569965A6223BEF506 /* Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-patch */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-update","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/build_opus-patch-info.txt"			);
+			name = "Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-patch";
+			outputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-patch"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  sh -c \"patch dnn/nnet.h < /Volumes/LaCie2TB/Developer/radae_nopy/src/opus-nnet.h.diff\"
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-patch
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  sh -c \"patch dnn/nnet.h < /Volumes/LaCie2TB/Developer/radae_nopy/src/opus-nnet.h.diff\"
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-patch
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  sh -c \"patch dnn/nnet.h < /Volumes/LaCie2TB/Developer/radae_nopy/src/opus-nnet.h.diff\"
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-patch
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  sh -c \"patch dnn/nnet.h < /Volumes/LaCie2TB/Developer/radae_nopy/src/opus-nnet.h.diff\"
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-patch
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		2A8C831C57A956AD69330BC5 /* Generate CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-complete */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-build","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-configure","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-download","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-install","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-mkdir","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-patch","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-update"			);
+			name = "Generate CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-complete";
+			outputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-complete"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  /opt/homebrew/bin/cmake -E make_directory /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-complete
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-done
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  /opt/homebrew/bin/cmake -E make_directory /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-complete
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-done
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  /opt/homebrew/bin/cmake -E make_directory /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-complete
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-done
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  /opt/homebrew/bin/cmake -E make_directory /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-complete
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-done
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		2FFDFB9AE2157D74C6256700 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "CMake PostBuild Rules";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src
+  /opt/homebrew/bin/cmake -E cmake_symlink_library /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug/librade.0.1.dylib /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug/librade.0.1.dylib /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug/librade.dylib
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src
+  /opt/homebrew/bin/cmake -E cmake_symlink_library /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release/librade.0.1.dylib /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release/librade.0.1.dylib /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release/librade.dylib
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src
+  /opt/homebrew/bin/cmake -E cmake_symlink_library /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel/librade.0.1.dylib /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel/librade.0.1.dylib /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel/librade.dylib
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src
+  /opt/homebrew/bin/cmake -E cmake_symlink_library /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo/librade.0.1.dylib /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo/librade.0.1.dylib /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo/librade.dylib
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		3C0110FC8322DE7E50886E21 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		4C0EF544247938C6BEAD2F10 /* Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-configure */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-patch","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/tmp/build_opus-cfgcmd.txt"			);
+			name = "Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-configure";
+			outputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-configure"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  sh -c \"PATH=/opt/homebrew/bin:/usr/bin:/bin ./autogen.sh && ./configure --with-pic --enable-osce --enable-dred --disable-shared --disable-doc --disable-extra-programs\"
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-configure
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  sh -c \"PATH=/opt/homebrew/bin:/usr/bin:/bin ./autogen.sh && ./configure --with-pic --enable-osce --enable-dred --disable-shared --disable-doc --disable-extra-programs\"
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-configure
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  sh -c \"PATH=/opt/homebrew/bin:/usr/bin:/bin ./autogen.sh && ./configure --with-pic --enable-osce --enable-dred --disable-shared --disable-doc --disable-extra-programs\"
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-configure
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  sh -c \"PATH=/opt/homebrew/bin:/usr/bin:/bin ./autogen.sh && ./configure --with-pic --enable-osce --enable-dred --disable-shared --disable-doc --disable-extra-programs\"
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-configure
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		5E2407A359B85DB3D4301D38 /* Generate CMakeFiles/build_opus */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-complete"			);
+			name = "Generate CMakeFiles/build_opus";
+			outputPaths = (
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/build_opus			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		65464E9BA23037460D4B959C /* Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-build */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-configure"			);
+			name = "Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-build";
+			outputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-build"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  /usr/bin/make
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-build
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  /usr/bin/make
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-build
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  /usr/bin/make
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-build
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  /usr/bin/make
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-build
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		74D15E6B7315B6E8D5E09CB8 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		999D5468B49D825CC4A81CA7 /* Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-update */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-download","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/build_opus-update-info.txt"			);
+			name = "Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-update";
+			outputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-update"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  /opt/homebrew/bin/cmake -E echo_append
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-update
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  /opt/homebrew/bin/cmake -E echo_append
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-update
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  /opt/homebrew/bin/cmake -E echo_append
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-update
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  /opt/homebrew/bin/cmake -E echo_append
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-update
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		9B50530E35CC49C82C2FACCF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		AD4693244B4B5BDC4A030A5C /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/ALL_BUILD			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		D31D640DE6045575E611A1E5 /* Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-download */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-mkdir","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/build_opus-urlinfo.txt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/download-build_opus.cmake"			);
+			name = "Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-download";
+			outputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-download"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src
+  /opt/homebrew/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/download-build_opus.cmake
+  /opt/homebrew/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/verify-build_opus.cmake
+  /opt/homebrew/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/extract-build_opus.cmake
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-download
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src
+  /opt/homebrew/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/download-build_opus.cmake
+  /opt/homebrew/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/verify-build_opus.cmake
+  /opt/homebrew/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/extract-build_opus.cmake
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-download
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src
+  /opt/homebrew/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/download-build_opus.cmake
+  /opt/homebrew/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/verify-build_opus.cmake
+  /opt/homebrew/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/extract-build_opus.cmake
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-download
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src
+  /opt/homebrew/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/download-build_opus.cmake
+  /opt/homebrew/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/verify-build_opus.cmake
+  /opt/homebrew/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/extract-build_opus.cmake
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-download
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		DC1EBCEB3C333591FA20F55B /* Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-mkdir */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-mkdir";
+			outputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-mkdir"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  /opt/homebrew/bin/cmake -Dcfgdir=/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/tmp/build_opus-mkdirs.cmake
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-mkdir
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  /opt/homebrew/bin/cmake -Dcfgdir=/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/tmp/build_opus-mkdirs.cmake
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-mkdir
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  /opt/homebrew/bin/cmake -Dcfgdir=/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/tmp/build_opus-mkdirs.cmake
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-mkdir
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  /opt/homebrew/bin/cmake -Dcfgdir=/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME -P /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/tmp/build_opus-mkdirs.cmake
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-mkdir
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		DCAB310A843EA34C03F0E670 /* Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-install */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-build"			);
+			name = "Generate build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-install";
+			outputPaths = (
+"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/build_opus-install"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  /opt/homebrew/bin/cmake -E echo_append
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-install
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  /opt/homebrew/bin/cmake -E echo_append
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-install
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  /opt/homebrew/bin/cmake -E echo_append
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-install
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus
+  /opt/homebrew/bin/cmake -E echo_append
+  /opt/homebrew/bin/cmake -E touch /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/build_opus-install
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		FB7682CC2F68D6CAA0F7E71B /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/ZERO_CHECK			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  make -f /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  make -f /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  make -f /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode
+  make -f /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37667C98C46F43F2B22769FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CC589F8239E47A08D6074B5 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/kiss_fft.c */,
+				828408C074AE4CDFB301ED3F /* /Volumes/LaCie2TB/Developer/radae_nopy/src/kiss_fftr.c */,
+				CDB0B7B38C894F488C9D62CB /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_bpf_test.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		766237BF2029447B90143391 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCE45C60765E45E6BF5B7818 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/radae_rx_nopy.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E7D80F118984B4697C42EBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF6E502015AB479D9FEE8271 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_modulate_wav.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F0D7656547C4FEAA01DCAD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D5AF603C2442ED8464F8C8 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/lpcnet_demo.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		823DA1A0A65849A593DC173A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EECC0495A5C0415FA064F3B5 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_ber_test.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8414FED9A4A8401990C1A59C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9AA304E0F6E40BB948E2D36 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/radae_tx_nopy.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C1EBE8809114E7FAA4BDC9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12CAF5375199499CB158D5A6 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_callsign_test.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90DEDD985EA54F95848EDABF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE22BC034D104BE091CBED79 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/real2iq.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0D42D50D4194AC2AF3C0DBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03F1D6518037497D9E8FE60C /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_demod_wav.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3A0DE9AB92844F3A85C25C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				118634E8E4B34958A06A1412 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_acq.c */,
+				34521E3F89CA4B2383C50073 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_api_nopy.c */,
+				01CB9B7925FC41559F56C059 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_bpf.c */,
+				182A0087860B4F37BFBA0A26 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dec.c */,
+				65EB45CBA3B64374AB01854B /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dec_data.c */,
+				F3623EFFC96445F7BA89493E /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_dsp.c */,
+				FAD750B94D174DBD95A15D7D /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_enc.c */,
+				A17A713F0029489DA9F3F331 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_enc_data.c */,
+				D0B8A7AD18BF4FB0BFCB6589 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_ofdm.c */,
+				9F78EF1C07174BDA82009BFF /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_rx.c */,
+				8AF0F3F4093944168121EAE7 /* /Volumes/LaCie2TB/Developer/radae_nopy/src/rade_tx.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00B535780A21424FB94C72DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E546D471B5CF1DFDAE4EE0F /* rade */;
+			targetProxy = 50CA0D4773B245D6A967F36A /* PBXContainerItemProxy */;
+		};
+		00D7D3E2969E4D41A787DF51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E546D471B5CF1DFDAE4EE0F /* rade */;
+			targetProxy = 8CD98A2EFE904D0AB281FB55 /* PBXContainerItemProxy */;
+		};
+		020BC30B35494B7A8764E742 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91AC7110E2242C49D7F94D3F /* ZERO_CHECK */;
+			targetProxy = E26F951AE05743B893E5EC88 /* PBXContainerItemProxy */;
+		};
+		090EE3C91B184E17BD94E3A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91AC7110E2242C49D7F94D3F /* ZERO_CHECK */;
+			targetProxy = 973A46943CFB4B05B2F92753 /* PBXContainerItemProxy */;
+		};
+		0ABB64B3B19C4E74A97BB32D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91AC7110E2242C49D7F94D3F /* ZERO_CHECK */;
+			targetProxy = 9F81B524FFD04597A2792903 /* PBXContainerItemProxy */;
+		};
+		24DE582B02B34E319D8CA384 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E546D471B5CF1DFDAE4EE0F /* rade */;
+			targetProxy = 6F22E149ABDC4EBEA2A91EE8 /* PBXContainerItemProxy */;
+		};
+		27B05E74F6BC4954ABAA364A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91AC7110E2242C49D7F94D3F /* ZERO_CHECK */;
+			targetProxy = 54E2ECBE40CB4C03814E3C13 /* PBXContainerItemProxy */;
+		};
+		3A31B5D52329457BB11ECB4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E546D471B5CF1DFDAE4EE0F /* rade */;
+			targetProxy = CB9CF4EC09C6449593C4E19D /* PBXContainerItemProxy */;
+		};
+		3B8132E417AD4FDCB56461D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5348A55545BAD48ED0395E35 /* build_opus */;
+			targetProxy = 1BF5F563F4FC4418887EE8D1 /* PBXContainerItemProxy */;
+		};
+		49D3AA91FDA74D40A213AFF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91AC7110E2242C49D7F94D3F /* ZERO_CHECK */;
+			targetProxy = 2892343534524BECB2DDDBA1 /* PBXContainerItemProxy */;
+		};
+		4A45EAFEDDC244998065B319 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E546D471B5CF1DFDAE4EE0F /* rade */;
+			targetProxy = B37B54117F9D4D9B80A5B523 /* PBXContainerItemProxy */;
+		};
+		53D15A41B4CC4482B97BF2F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43211FB65DDA53AA5D2DCE63 /* rade_ber_test */;
+			targetProxy = 28FF86ACCBEC4305A9F5813B /* PBXContainerItemProxy */;
+		};
+		587CE872EEC345F780FA48C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71AF4FA75306E0D90F1FF208 /* rade_modulate_wav */;
+			targetProxy = 425241100B62492E8BDA6258 /* PBXContainerItemProxy */;
+		};
+		58F4EAE5D1514DC4A55A0777 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91AC7110E2242C49D7F94D3F /* ZERO_CHECK */;
+			targetProxy = 5A0D0704C01D455DBC018DD6 /* PBXContainerItemProxy */;
+		};
+		5B2F367118F547C18156CB42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5348A55545BAD48ED0395E35 /* build_opus */;
+			targetProxy = EA4F357A5CF64902AAFD8978 /* PBXContainerItemProxy */;
+		};
+		5B8F5D60984448CDBAD6846F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 115BC47DD57AFBC00FC1E1A9 /* real2iq */;
+			targetProxy = C1660C20B7D049E38FEB581B /* PBXContainerItemProxy */;
+		};
+		66D724A10D214FEA85F1DD47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5348A55545BAD48ED0395E35 /* build_opus */;
+			targetProxy = DB721224BE2340DD97B2BCDE /* PBXContainerItemProxy */;
+		};
+		73D5118AED0549E9BF7BFB6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4510BA019C7B89CAA26E2CF1 /* rade_demod_wav */;
+			targetProxy = 2BC7AEE273584EB485C975B0 /* PBXContainerItemProxy */;
+		};
+		8DBE0D32B8944BCFAB5C5F98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5348A55545BAD48ED0395E35 /* build_opus */;
+			targetProxy = 260850CE81654619A2D9868E /* PBXContainerItemProxy */;
+		};
+		8F70909E3D714823A50DEB39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93FF9EFAF6DB3FB6AC9AD515 /* rade_bpf_test */;
+			targetProxy = 81E6EAD147444823AAB49087 /* PBXContainerItemProxy */;
+		};
+		9B510046C9114DF69B2F45D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E546D471B5CF1DFDAE4EE0F /* rade */;
+			targetProxy = F3D695A4E2344236AF384ED4 /* PBXContainerItemProxy */;
+		};
+		A719DEAB823A4E11AC9EE9FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5348A55545BAD48ED0395E35 /* build_opus */;
+			targetProxy = 5306EF2860FA4FFCBD458DFF /* PBXContainerItemProxy */;
+		};
+		ACDF0C39348A4B5D901B461D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 360945D10D4BF9E33E167BF2 /* lpcnet_demo */;
+			targetProxy = 7708535E2CFB4C7CA1854BD7 /* PBXContainerItemProxy */;
+		};
+		AE3DC194E16043B8AC1FB384 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49C8B465D3940513FE48CDD1 /* radae_tx */;
+			targetProxy = 84782C25447648C7803066EB /* PBXContainerItemProxy */;
+		};
+		B178F27443E74B469EE51A22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91AC7110E2242C49D7F94D3F /* ZERO_CHECK */;
+			targetProxy = EB1E12288AB14DD9B84575E5 /* PBXContainerItemProxy */;
+		};
+		B8E420712E33418591126558 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5348A55545BAD48ED0395E35 /* build_opus */;
+			targetProxy = 4A409615BCEE4D5D86A01C40 /* PBXContainerItemProxy */;
+		};
+		BFAF1CF1649A4FA3A78F65EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5348A55545BAD48ED0395E35 /* build_opus */;
+			targetProxy = D09DA303857D4CBB9570A3EB /* PBXContainerItemProxy */;
+		};
+		C00D135F392D466885C1D24D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9CA470B558AEFDCCF93A476 /* radae_rx */;
+			targetProxy = 35AE8977C8AA4CDF96CB04EF /* PBXContainerItemProxy */;
+		};
+		C458CB35BC6245F898096790 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91AC7110E2242C49D7F94D3F /* ZERO_CHECK */;
+			targetProxy = DADEAF5321D946638CA4756F /* PBXContainerItemProxy */;
+		};
+		C48B5CE48F974E8EAA78CE85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E546D471B5CF1DFDAE4EE0F /* rade */;
+			targetProxy = E3F84D80D4F440A6A1A6547A /* PBXContainerItemProxy */;
+		};
+		C75417CFD40946AC89302E2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91AC7110E2242C49D7F94D3F /* ZERO_CHECK */;
+			targetProxy = BB770CE515D9475EB7DFC2D7 /* PBXContainerItemProxy */;
+		};
+		C787F7454EC74CF9B2E65616 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91AC7110E2242C49D7F94D3F /* ZERO_CHECK */;
+			targetProxy = C72E63577AC64935AE4570CE /* PBXContainerItemProxy */;
+		};
+		CEF8AD2D195F4EA288ED69B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5348A55545BAD48ED0395E35 /* build_opus */;
+			targetProxy = 09267C64DC7A49E39A46D720 /* PBXContainerItemProxy */;
+		};
+		D7ED3C60C18B4484B36230AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91AC7110E2242C49D7F94D3F /* ZERO_CHECK */;
+			targetProxy = 2E66B5F8E4A847B7A3950615 /* PBXContainerItemProxy */;
+		};
+		E38AE7FA546A4422A3A05945 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91AC7110E2242C49D7F94D3F /* ZERO_CHECK */;
+			targetProxy = FEE5E04803FD4BB0BE63C4F7 /* PBXContainerItemProxy */;
+		};
+		F7C6206DCBF14870803CC4B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E546D471B5CF1DFDAE4EE0F /* rade */;
+			targetProxy = 34B7F52F515D441FB11C75B7 /* PBXContainerItemProxy */;
+		};
+		F7E60610B0614BD3988DAAE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5348A55545BAD48ED0395E35 /* build_opus */;
+			targetProxy = 411A22F2CC2A4A82BA1D6952 /* PBXContainerItemProxy */;
+		};
+		FD00573CC6CE4C31BFCFE201 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EAF3AAE63ED5594C5A860C8 /* rade_callsign_test */;
+			targetProxy = 370DE78B9D874639AB1696DA /* PBXContainerItemProxy */;
+		};
+		FD5F47191A8D4284B3F9D40A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5348A55545BAD48ED0395E35 /* build_opus */;
+			targetProxy = 26EDD446BD244F6FAD432365 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09D832C959ED471AB3FFC2C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release/librade.0.1.dylib,"-lm","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_callsign_test;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_callsign_test.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		09E794E037E64FACA7B756D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = build_opus;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		0A02C126F7D843E29AC5AA50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = lpcnet_demo;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/lpcnet_demo.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		13731BA1BA8945F480629D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug/librade.0.1.dylib,"-lm","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_ber_test;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_ber_test.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		21024BAA5F6C4BB1B443E267 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = 0.1.0;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",rade_EXPORTS,"'IS_BUILDING_RADE_API=1'","'RADE_PYTHON_FREE=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "@rpath";
+				LIBRARY_STYLE = DYNAMIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   '-std=gnu11' -fPIC ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-headerpad_max_install_names","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade.0.1;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		248DDC0624084062B106E0C0 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel/librade.0.1.dylib,"-lm","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_ber_test;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_ber_test.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		249AB7191F4041298796F7A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		27C37FF035E844489A76AE7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SYMROOT = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build;
+			};
+			name = Debug;
+		};
+		2E52436FB63542A991F93E64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		326B3C4BA62C434196DF1652 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_bpf_test;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_bpf_test.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		35F63FEE1A1341CFAF7922FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release/librade.0.1.dylib,"-lm","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_ber_test;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_ber_test.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		416C0E4D719B4D79AA9FA1F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		46ABCF99DC0644C08DF96B5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_demod_wav;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_demod_wav.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		4CF2ECD3C0E940B18BED40B8 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		51948FAD6209422CA807C749 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = build_opus;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		522B1752FA6C4ABEB737B251 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		5537F48D637C47798279DEB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_modulate_wav;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_modulate_wav.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		572D6DA8C75749638ECA91BC /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = lpcnet_demo;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/lpcnet_demo.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		5C3A530FEEAC4BAE829F434A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = 0.1.0;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",rade_EXPORTS,"'IS_BUILDING_RADE_API=1'","'RADE_PYTHON_FREE=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "@rpath";
+				LIBRARY_STYLE = DYNAMIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' -fPIC ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-headerpad_max_install_names","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade.0.1;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		5D8A2F84AA194D379117028C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = radae_rx;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/radae_rx.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		60FD386841394BC98AE2C455 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = radae_tx;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/radae_tx.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		6640514A1E254C70B42A7555 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = 0.1.0;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",rade_EXPORTS,"'IS_BUILDING_RADE_API=1'","'RADE_PYTHON_FREE=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "@rpath";
+				LIBRARY_STYLE = DYNAMIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' -fPIC ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-headerpad_max_install_names","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade.0.1;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		73276B42CCFB4B1582396FA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = radae_tx;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/radae_tx.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		74729C554B384066B448F7D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_modulate_wav;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_modulate_wav.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		7622481244384D02851E640A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = real2iq;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/real2iq.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		79690438D58842CBA919A4FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = radae_rx;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/radae_rx.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		93057167BB0641B8A3EBE65F /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("       -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = radae_rx;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/radae_rx.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		937EE6AF65A74D3BB480E63E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug/librade.0.1.dylib,"-lm","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_callsign_test;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_callsign_test.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		97218423987B4546BDFE0C71 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("       -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo/librade.0.1.dylib,"-lm","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_callsign_test;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_callsign_test.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		9A75344334034E20AFF10CE0 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_modulate_wav;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_modulate_wav.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		9C3C5835CC7744B684B063AC /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("       -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_bpf_test;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_bpf_test.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		A18A38565D374EDBA83B115B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_bpf_test;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_bpf_test.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		AA4F6AF5F07B437DA42718B6 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = radae_rx;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/radae_rx.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		AB018F18C2ED4E359CF160A0 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("       -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo/librade.0.1.dylib,"-lm","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_ber_test;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_ber_test.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		ADB5AB1B865C49C4A3FE4C9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = build_opus;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		AE2CAEDB4EAF41DAB1349BCB /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("       -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_modulate_wav;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_modulate_wav.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B46EA94F2FF644BA98465600 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel/librade.0.1.dylib,"-lm","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_callsign_test;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_callsign_test.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B908830DCE1A4670B6DC9B77 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("       -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_demod_wav;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_demod_wav.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		BDB62C149BBA4941AF1B95F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = lpcnet_demo;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/lpcnet_demo.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		BDF203A6C98447A8AE48D4C0 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		BE5D5FE47B44439E803B797A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build;
+			};
+			name = Release;
+		};
+		C3EC28162B8F4F3DAFE8EC93 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("       -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = lpcnet_demo;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/lpcnet_demo.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		C44781FEDB1E49B9A38827CA /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = real2iq;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/real2iq.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		C49847BCD0B04554A69CEB51 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = build_opus;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		C86BBC3FD249472E92E8E952 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("       -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = real2iq;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/real2iq.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		CA560876A59E40AFBFE30DBC /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build;
+			};
+			name = MinSizeRel;
+		};
+		CAB5274C76544DA98F9D4445 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = 0.1.0;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",rade_EXPORTS,"'IS_BUILDING_RADE_API=1'","'RADE_PYTHON_FREE=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "@rpath";
+				LIBRARY_STYLE = DYNAMIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("       -DNDEBUG '-std=gnu11' -fPIC ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-headerpad_max_install_names","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade.0.1;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		CD6FB32FC8624B82940AE63A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_bpf_test;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_bpf_test.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		D140CA4134BF4C59876E7578 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("       -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/RelWithDebInfo/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = radae_tx;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/radae_tx.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		D1B37442CB8F4B07A9E2F4DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = real2iq;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/real2iq.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		D1DCA0F0D2C848E7AAAB5999 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		D2E77D285456465ABBF116E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_demod_wav;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_demod_wav.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		DD40FDCD662145FD96BCA57F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/Release/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = radae_tx;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/radae_tx.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		DF9A913AFBF642809982D238 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/dnn","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/celt","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/include","/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus",/Volumes/LaCie2TB/Developer/radae_nopy/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/MinSizeRel/librade.0.1.dylib,"/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus/.libs/libopus.a","-lm","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rade_demod_wav;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build/rade_demod_wav.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		ECDE32F0008F4558BF24A6EA /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		FD8715286DAC484AB8F7892E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build;
+			};
+			name = RelWithDebInfo;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12FF5C92BB5843368539C5B6 /* Build configuration list for PBXAggregateTarget "build_opus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADB5AB1B865C49C4A3FE4C9C /* Debug */,
+				09E794E037E64FACA7B756D7 /* Release */,
+				C49847BCD0B04554A69CEB51 /* MinSizeRel */,
+				51948FAD6209422CA807C749 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2958C9F07D0040899CEEC542 /* Build configuration list for PBXNativeTarget "lpcnet_demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDB62C149BBA4941AF1B95F2 /* Debug */,
+				0A02C126F7D843E29AC5AA50 /* Release */,
+				572D6DA8C75749638ECA91BC /* MinSizeRel */,
+				C3EC28162B8F4F3DAFE8EC93 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2E255303333E4D0BA63ADFC2 /* Build configuration list for PBXNativeTarget "rade_bpf_test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD6FB32FC8624B82940AE63A /* Debug */,
+				326B3C4BA62C434196DF1652 /* Release */,
+				A18A38565D374EDBA83B115B /* MinSizeRel */,
+				9C3C5835CC7744B684B063AC /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		372C9DED94D841C4876A0D9B /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				522B1752FA6C4ABEB737B251 /* Debug */,
+				416C0E4D719B4D79AA9FA1F5 /* Release */,
+				D1DCA0F0D2C848E7AAAB5999 /* MinSizeRel */,
+				BDF203A6C98447A8AE48D4C0 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4D4761EAF5B44E00A2597452 /* Build configuration list for PBXNativeTarget "radae_rx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D8A2F84AA194D379117028C /* Debug */,
+				79690438D58842CBA919A4FD /* Release */,
+				AA4F6AF5F07B437DA42718B6 /* MinSizeRel */,
+				93057167BB0641B8A3EBE65F /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		662125507C3C42E28BA9EDF4 /* Build configuration list for PBXNativeTarget "rade_demod_wav" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46ABCF99DC0644C08DF96B5F /* Debug */,
+				D2E77D285456465ABBF116E1 /* Release */,
+				DF9A913AFBF642809982D238 /* MinSizeRel */,
+				B908830DCE1A4670B6DC9B77 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		68D981B61073464989E36D76 /* Build configuration list for PBXNativeTarget "radae_tx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73276B42CCFB4B1582396FA9 /* Debug */,
+				DD40FDCD662145FD96BCA57F /* Release */,
+				60FD386841394BC98AE2C455 /* MinSizeRel */,
+				D140CA4134BF4C59876E7578 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6FF5AB9A0C8C4342AC44D9A8 /* Build configuration list for PBXProject "radae_nopy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27C37FF035E844489A76AE7B /* Debug */,
+				BE5D5FE47B44439E803B797A /* Release */,
+				CA560876A59E40AFBFE30DBC /* MinSizeRel */,
+				FD8715286DAC484AB8F7892E /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		97D7146F6A024A78A7FC65B3 /* Build configuration list for PBXNativeTarget "rade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21024BAA5F6C4BB1B443E267 /* Debug */,
+				5C3A530FEEAC4BAE829F434A /* Release */,
+				6640514A1E254C70B42A7555 /* MinSizeRel */,
+				CAB5274C76544DA98F9D4445 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		98686F570BF74621B2964758 /* Build configuration list for PBXNativeTarget "rade_ber_test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13731BA1BA8945F480629D36 /* Debug */,
+				35F63FEE1A1341CFAF7922FB /* Release */,
+				248DDC0624084062B106E0C0 /* MinSizeRel */,
+				AB018F18C2ED4E359CF160A0 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A8827E300662496E920A0FF8 /* Build configuration list for PBXNativeTarget "rade_modulate_wav" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74729C554B384066B448F7D3 /* Debug */,
+				5537F48D637C47798279DEB0 /* Release */,
+				9A75344334034E20AFF10CE0 /* MinSizeRel */,
+				AE2CAEDB4EAF41DAB1349BCB /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C0E27C8A2E4A4221B3E73C75 /* Build configuration list for PBXNativeTarget "real2iq" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1B37442CB8F4B07A9E2F4DE /* Debug */,
+				7622481244384D02851E640A /* Release */,
+				C44781FEDB1E49B9A38827CA /* MinSizeRel */,
+				C86BBC3FD249472E92E8E952 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EFC72CB8738146949949002E /* Build configuration list for PBXNativeTarget "rade_callsign_test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				937EE6AF65A74D3BB480E63E /* Debug */,
+				09D832C959ED471AB3FFC2C9 /* Release */,
+				B46EA94F2FF644BA98465600 /* MinSizeRel */,
+				97218423987B4546BDFE0C71 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F5FFC6DFE4F24DC9A876987F /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E52436FB63542A991F93E64 /* Debug */,
+				249AB7191F4041298796F7A1 /* Release */,
+				4CF2ECD3C0E940B18BED40B8 /* MinSizeRel */,
+				ECDE32F0008F4558BF24A6EA /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7264D0ABA54B4E7B90AC6660 /* Project object */;
+}

@@ -1,0 +1,13 @@
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/build_opus.dir
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/ALL_BUILD.dir
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/ZERO_CHECK.dir
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/CMakeFiles/lpcnet_demo.dir
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/CMakeFiles/rade.dir
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/CMakeFiles/radae_tx.dir
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/CMakeFiles/radae_rx.dir
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/CMakeFiles/real2iq.dir
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/CMakeFiles/rade_demod_wav.dir
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/CMakeFiles/rade_modulate_wav.dir
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/CMakeFiles/rade_bpf_test.dir
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/CMakeFiles/rade_ber_test.dir
+/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/src/CMakeFiles/rade_callsign_test.dir

@@ -1,14 +1,29 @@
 message(STATUS "Will build opus with FARGAN")
 
-set(CONFIGURE_COMMAND ./autogen.sh && ./configure --with-pic --enable-osce --enable-dred --disable-shared --disable-doc --disable-extra-programs)
+# Locate autoreconf at CMake-configure time (when PATH is the user's shell PATH).
+# The path is baked into the ExternalProject configure command so it works inside
+# Xcode's sandboxed build environment, which does not inherit /opt/homebrew/bin.
+find_program(AUTORECONF autoreconf HINTS /opt/homebrew/bin /usr/local/bin REQUIRED)
+get_filename_component(AUTOTOOLS_BIN_DIR "${AUTORECONF}" DIRECTORY)
 
-if (CMAKE_CROSSCOMPILING)
-set(CONFIGURE_COMMAND ${CONFIGURE_COMMAND} --host=${CMAKE_C_COMPILER_TARGET} --target=${CMAKE_C_COMPILER_TARGET})
-endif (CMAKE_CROSSCOMPILING)
+set(OPUS_CONFIGURE_FLAGS --with-pic --enable-osce --enable-dred --disable-shared --disable-doc --disable-extra-programs)
 
-if (NOT DEFINED OPUS_URL)
-set(OPUS_URL https://github.com/xiph/opus/archive/940d4e5af64351ca8ba8390df3f555484c567fbb.zip)
-endif (NOT DEFINED OPUS_URL)
+if(CMAKE_CROSSCOMPILING)
+    list(APPEND OPUS_CONFIGURE_FLAGS --host=${CMAKE_C_COMPILER_TARGET} --target=${CMAKE_C_COMPILER_TARGET})
+endif()
+
+# Join flags into a single string for embedding in a sh -c command.
+list(JOIN OPUS_CONFIGURE_FLAGS " " OPUS_CONFIGURE_FLAGS_STR)
+
+# CONFIGURE_COMMAND wraps autogen+configure in a single sh -c call so that &&
+# works as a shell operator and PATH is set for both commands.
+set(CONFIGURE_COMMAND
+    sh -c "PATH=${AUTOTOOLS_BIN_DIR}:/usr/bin:/bin ./autogen.sh && ./configure ${OPUS_CONFIGURE_FLAGS_STR}"
+)
+
+if(NOT DEFINED OPUS_URL)
+    set(OPUS_URL https://github.com/xiph/opus/archive/940d4e5af64351ca8ba8390df3f555484c567fbb.zip)
+endif()
 
 include(ExternalProject)
 if(APPLE AND BUILD_OSX_UNIVERSAL)
@@ -18,8 +33,8 @@ ExternalProject_Add(build_opus_x86
     DOWNLOAD_EXTRACT_TIMESTAMP NO
     BUILD_IN_SOURCE 1
     PATCH_COMMAND sh -c "patch dnn/nnet.h < ${CMAKE_SOURCE_DIR}/src/opus-nnet.h.diff"
-    CONFIGURE_COMMAND ${CONFIGURE_COMMAND} --host=x86_64-apple-darwin --target=x86_64-apple-darwin CFLAGS=-arch\ x86_64\ -O2\ -mmacosx-version-min=10.11
-    BUILD_COMMAND $(MAKE)
+    CONFIGURE_COMMAND sh -c "PATH=${AUTOTOOLS_BIN_DIR}:/usr/bin:/bin ./autogen.sh && ./configure --with-pic --enable-osce --enable-dred --disable-shared --disable-doc --disable-extra-programs --host=x86_64-apple-darwin --target=x86_64-apple-darwin CFLAGS='-arch x86_64 -O2 -mmacosx-version-min=10.11'"
+    BUILD_COMMAND /usr/bin/make
     INSTALL_COMMAND ""
     URL ${OPUS_URL}
 )
@@ -27,8 +42,8 @@ ExternalProject_Add(build_opus_arm
     DOWNLOAD_EXTRACT_TIMESTAMP NO
     BUILD_IN_SOURCE 1
     PATCH_COMMAND sh -c "patch dnn/nnet.h < ${CMAKE_SOURCE_DIR}/src/opus-nnet.h.diff"
-    CONFIGURE_COMMAND ${CONFIGURE_COMMAND} --host=aarch64-apple-darwin --target=aarch64-apple-darwin CFLAGS=-arch\ arm64\ -O2\ -mmacosx-version-min=10.11
-    BUILD_COMMAND $(MAKE)
+    CONFIGURE_COMMAND sh -c "PATH=${AUTOTOOLS_BIN_DIR}:/usr/bin:/bin ./autogen.sh && ./configure --with-pic --enable-osce --enable-dred --disable-shared --disable-doc --disable-extra-programs --host=aarch64-apple-darwin --target=aarch64-apple-darwin CFLAGS='-arch arm64 -O2 -mmacosx-version-min=10.11'"
+    BUILD_COMMAND /usr/bin/make
     INSTALL_COMMAND ""
     URL ${OPUS_URL}
 )
@@ -61,7 +76,7 @@ ExternalProject_Add(build_opus
     BUILD_IN_SOURCE 1
     PATCH_COMMAND sh -c "patch dnn/nnet.h < ${CMAKE_SOURCE_DIR}/src/opus-nnet.h.diff"
     CONFIGURE_COMMAND ${CONFIGURE_COMMAND}
-    BUILD_COMMAND $(MAKE)
+    BUILD_COMMAND /usr/bin/make
     INSTALL_COMMAND ""
     URL ${OPUS_URL}
 )

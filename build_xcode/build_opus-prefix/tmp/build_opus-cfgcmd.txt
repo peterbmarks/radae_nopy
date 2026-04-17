@@ -1,0 +1,1 @@
+cmd='sh;-c;PATH=/opt/homebrew/bin:/usr/bin:/bin ./autogen.sh && ./configure --with-pic --enable-osce --enable-dred --disable-shared --disable-doc --disable-extra-programs'

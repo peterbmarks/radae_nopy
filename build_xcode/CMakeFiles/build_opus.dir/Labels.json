@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/build_opus"
+		},
+		{
+			"file" : "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/build_opus.rule"
+		},
+		{
+			"file" : "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/CMakeFiles/CMakeFiles/build_opus-complete.rule"
+		},
+		{
+			"file" : "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/CMakeFiles/build_opus-build.rule"
+		},
+		{
+			"file" : "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/CMakeFiles/build_opus-configure.rule"
+		},
+		{
+			"file" : "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/CMakeFiles/build_opus-download.rule"
+		},
+		{
+			"file" : "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/CMakeFiles/build_opus-install.rule"
+		},
+		{
+			"file" : "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/CMakeFiles/build_opus-mkdir.rule"
+		},
+		{
+			"file" : "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/CMakeFiles/build_opus-patch.rule"
+		},
+		{
+			"file" : "/Volumes/LaCie2TB/Developer/radae_nopy/build_xcode/build_opus-prefix/src/build_opus-stamp/CMakeFiles/build_opus-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"build_opus"
+		],
+		"name" : "build_opus"
+	}
+}
