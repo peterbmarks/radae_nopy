@@ -33,31 +33,20 @@ jobs:
         run: |
           pip3 install torch numpy matplotlib tqdm
 
-      - name: Install codec2-dev
-        shell: bash
-        working-directory: /home/runner/
-        run: |
-          git clone https://github.com/drowe67/codec2-dev.git
-          cd codec2-dev
-          mkdir build_linux
-          cd build_linux
-          cmake -DUNITTEST=1 ..
-          make ch mksine tlininterp
-
       - name: Build radae_nopy
         shell: bash
         working-directory: ${{github.workspace}}/radae_nopy
         run: |
           mkdir build
           cd build
-          cmake ..
+          cmake -DCMAKE_BUILD_TYPE=Release ..
           make
 
-      - name: Checkout radae (dr_nopy branch)
+      - name: Checkout radae
         uses: actions/checkout@v4
         with:
           repository: drowe67/radae
-          ref: dr_nopy
+          ref: main
           path: ${{github.workspace}}/radae
 
       - name: Build radae
