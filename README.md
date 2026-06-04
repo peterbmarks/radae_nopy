@@ -1,5 +1,15 @@
 # C Port of RADE V1
 
+## This repo is no longer recommended
+
+The FreeDV project has started a new repository for the C port of RADE V1 [freedv-backend](https://github.com/tmiw/freedv-backend) that should be used
+for future integration.
+
+We know that many clients have already integrated this code but new users should use the freedv-backend repo from now on.
+
+The project is keeping a list of known integrations of FreeDV RADE [here](https://freedv.org/alternative-freedv-rade-v1-software/)
+
+## Old notes
 This repo contains a pure C implementaion of RADE V1, with all Python code and dependencies removed. It was derived from the [reference Python implementation](https://github.com/drowe67/radae) with the asistance of Claude Code. It has been reviewed, and carefully tested by the FreeDV team.  It passes the same [suite of automated tests](https://github.com/drowe67/radae/pull/66) as the Python version.
 
 This has been tested on Linux and macOS.
