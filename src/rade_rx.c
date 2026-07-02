@@ -339,7 +339,6 @@ int rade_rx_process(rade_rx_state *rx, float *features_out, float *eoo_out, cons
                 rx->synced_count = 0;
                 rx->uw_errors = 0;
                 rx->valid_count = rx->Nmf_unsync;
-                rx->snrdB_3k_est = 0.0f;
 
                 /* Fine refinement of timing/frequency */
                 float ffine_start = rx->fmax - 10.0f;

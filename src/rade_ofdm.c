@@ -410,7 +410,7 @@ float rade_ofdm_pilot_eq(const rade_ofdm *ofdm, RADE_COMP *rx_sym,
     }
     S2 += 1e-12f;  /* Avoid division by zero */
     float snr_est = S1 / (2.0f * S2) - 1.0f;
-    if (snr_est <= 0.0f) snr_est = 0.1f;
+    if (snr_est <= 0.1f) snr_est = 0.1f;
     float snrdB_est = 10.0f * log10f(snr_est);
 
     /* Correction based on average of straight line fit to AWGN/MPG/MPP */
