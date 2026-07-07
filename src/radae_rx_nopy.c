@@ -169,7 +169,7 @@ int main(int argc, char *argv[]) {
                 snr_log_cap = snr_log_cap ? snr_log_cap * 2 : 4096;
                 snr_log = realloc(snr_log, sizeof(float) * snr_log_cap);
             }
-            snr_log[snr_log_size++] = rade_snr_est_float(r);
+            snr_log[snr_log_size++] = rade_snrdB_3k_est(r);
         }
 
         frame_count++;

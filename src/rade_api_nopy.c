@@ -277,13 +277,7 @@ float rade_freq_offset(struct rade *r) {
     return rade_rx_freq_offset(&r->rx);
 }
 
-int rade_snrdB_3k_est(struct rade *r) {
-    assert(r != NULL);
-    if (r->flags & RADE_MODE_V2) return (int)r->rx_v2.snr_est_dB;
-    return (int)rade_rx_snrdB_3k_est(&r->rx);
-}
-
-float rade_snr_est_float(struct rade *r) {
+float rade_snrdB_3k_est(struct rade *r) {
     assert(r != NULL);
     if (r->flags & RADE_MODE_V2) return r->rx_v2.snr_est_dB;
     return (float)rade_rx_snrdB_3k_est(&r->rx);
