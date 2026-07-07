@@ -45,6 +45,7 @@ int rade_tx_v2_init(rade_tx_v2_state *tx) {
 
     memset(&tx->enc_state, 0, sizeof(tx->enc_state));
     rade_v2_ofdm_init(&tx->ofdm);
+    tx->data_symbol = -1.0f;
 
     return 0;
 }
@@ -75,7 +76,7 @@ int rade_tx_v2_process(rade_tx_v2_state *tx, RADE_COMP *tx_out, const float *fea
         float       *dst = &enc_features[i * num_features];
         for (int j = 0; j < num_used; j++)
             dst[j] = src[j];
-        dst[num_used] = -1.0f;   /* auxdata symbol */
+        dst[num_used] = tx->data_symbol;   /* BPSK data symbol */
     }
 
     /* Encode: enc_stride feature frames -> latent_dim floats */
@@ -84,6 +85,10 @@ int rade_tx_v2_process(rade_tx_v2_state *tx, RADE_COMP *tx_out, const float *fea
 
     /* Modulate: z -> IQ samples */
     return rade_v2_ofdm_mod_frame(&tx->ofdm, tx_out, z);
+}
+
+void rade_tx_v2_set_data_symbol(rade_tx_v2_state *tx, float symbol) {
+    tx->data_symbol = symbol;
 }
 
 int rade_tx_v2_eoo(rade_tx_v2_state *tx, RADE_COMP *tx_out) {

@@ -48,6 +48,7 @@ typedef struct {
     RADEEncV2      enc_model;
     RADEEncV2State enc_state;
     rade_v2_ofdm   ofdm;
+    float          data_symbol;  /* BPSK data symbol (+1.0 or -1.0), default -1.0 */
 } rade_tx_v2_state;
 
 /* Initialise V2 transmitter (loads built-in weights).
@@ -74,6 +75,9 @@ int rade_tx_v2_process(rade_tx_v2_state *tx, RADE_COMP *tx_out, const float *fea
    tx_out: RADE_V2_NEOO complex samples
    Returns number of output samples written. */
 int rade_tx_v2_eoo(rade_tx_v2_state *tx, RADE_COMP *tx_out);
+
+/* Set the BPSK data symbol to embed in the next modem frame (+1.0 or -1.0). */
+void rade_tx_v2_set_data_symbol(rade_tx_v2_state *tx, float symbol);
 
 #ifdef __cplusplus
 }

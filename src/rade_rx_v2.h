@@ -124,6 +124,9 @@ typedef struct {
 
     float az_hat[RADE_V2_LATENT_DIM];          /* Last latent vector from demod */
 
+    /* Last received BPSK data symbol (soft decision, +/-1 range) */
+    float data_symbol;
+
     /* nin: samples required for next call */
     int nin;
 
@@ -161,6 +164,10 @@ int rade_rx_v2_n_features_out(void);
      bit 1 (0x2): end-of-over detected */
 int rade_rx_v2_process(rade_rx_v2_state *rx, float *features_out,
                        const RADE_COMP *rx_in);
+
+/* Returns the last received BPSK data symbol (soft decision, valid after
+   rade_rx_v2_process returns with bit 0 set). */
+float rade_rx_v2_get_data_symbol(const rade_rx_v2_state *rx);
 
 #ifdef __cplusplus
 }

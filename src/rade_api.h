@@ -65,6 +65,8 @@ typedef struct {
 
 #include "rade_tx.h"
 #include "rade_rx.h"
+#include "rade_tx_v2.h"
+#include "rade_rx_v2.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -79,6 +81,7 @@ extern "C" {
 #define RADE_USE_C_DECODER 0x2
 #define RADE_FOFF_TEST     0x4                // test mode used only by developers
 #define RADE_VERBOSE_0     0x8                // reduce verbosity to "quiet"
+#define RADE_MODE_V2       0x10               // select RADE V2 (default is V1)
 
 // Must be called BEFORE any other RADE functions as this
 // initializes internal library state.
@@ -92,11 +95,13 @@ struct rade {
     int auxdata;
     int bottleneck;
 
-    /* Transmitter state */
-    rade_tx_state tx;
+    /* V1 state */
+    rade_tx_state    tx;
+    rade_rx_state    rx;
 
-    /* Receiver state */
-    rade_rx_state rx;
+    /* V2 state */
+    rade_tx_v2_state tx_v2;
+    rade_rx_v2_state rx_v2;
 };
 
 // note single context only in this version, one context has one Tx, and one Rx
@@ -161,8 +166,17 @@ RADE_EXPORT float rade_freq_offset(struct rade *r);
 // returns the current SNR estimate (in dB) of the Rx signal ( when rade_sync()!=0 )
 RADE_EXPORT int rade_snrdB_3k_est(struct rade *r);
 
+// returns the current SNR estimate (in dB) as a float ( when rade_sync()!=0 )
+RADE_EXPORT float rade_snr_est_float(struct rade *r);
+
 // test mode: disable unsync after this many seconds (0 = disabled)
 RADE_EXPORT void rade_set_disable_unsync(struct rade *r, float seconds);
+
+// V2 only: set BPSK data symbol to transmit in next modem frame (+1.0 or -1.0)
+RADE_EXPORT void rade_tx_set_data_symbol(struct rade *r, float symbol);
+
+// V2 only: get last received BPSK data symbol (soft decision, valid after rade_rx() returns > 0)
+RADE_EXPORT float rade_rx_get_data_symbol(struct rade *r);
 
 #ifdef __cplusplus
 }

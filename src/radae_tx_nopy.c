@@ -47,31 +47,33 @@ void usage(void) {
     fprintf(stderr, "usage: radae_tx_nopy [options]\n");
     fprintf(stderr, "  -h, --help           Show this help\n");
     fprintf(stderr, "  --model_name FILE    Path to model (ignored, uses built-in weights)\n");
+    fprintf(stderr, "  --v2                 Use RADE V2 (default: V1)\n");
     fprintf(stderr, "\n");
     fprintf(stderr, "Reads vocoder features from stdin, writes IQ samples to stdout.\n");
-    fprintf(stderr, "Features format: float32, %d values per modem frame\n",
-            RADE_NZMF * RADE_FRAMES_PER_STEP * RADE_NB_TOTAL_FEATURES);
-    fprintf(stderr, "Output format: complex float32 (interleaved I,Q), %d samples per modem frame\n",
-            RADE_NMF);
 }
 
 int main(int argc, char *argv[]) {
     int opt;
     char *model_name = "model19_check3/checkpoints/checkpoint_epoch_100.pth";
+    int flags = 0;
 
     static struct option long_options[] = {
         {"help",       no_argument,       NULL, 'h'},
         {"model_name", required_argument, NULL, 'm'},
+        {"v2",         no_argument,       NULL, '2'},
         {NULL,         0,                 NULL, 0}
     };
 
-    while ((opt = getopt_long(argc, argv, "hm:", long_options, NULL)) != -1) {
+    while ((opt = getopt_long(argc, argv, "hm:2", long_options, NULL)) != -1) {
         switch (opt) {
         case 'h':
             usage();
             return 0;
         case 'm':
             model_name = optarg;
+            break;
+        case '2':
+            flags |= RADE_MODE_V2;
             break;
         default:
             usage();
@@ -82,7 +84,7 @@ int main(int argc, char *argv[]) {
     /* Initialize RADE */
     rade_initialize();
 
-    struct rade *r = rade_open(model_name, 0);
+    struct rade *r = rade_open(model_name, flags);
     if (r == NULL) {
         fprintf(stderr, "Failed to open RADE\n");
         return 1;

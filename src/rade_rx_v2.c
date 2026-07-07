@@ -293,7 +293,14 @@ static int update_frame_sync_decode(rade_rx_v2_state *rx,
             dst[j] = src[j];
     }
 
+    /* Store data symbol from first frame (soft decision ±1) */
+    rx->data_symbol = dec_features[0 * num_feat + num_used];
+
     return 1;
+}
+
+float rade_rx_v2_get_data_symbol(const rade_rx_v2_state *rx) {
+    return rx->data_symbol;
 }
 
 /*---------------------------------------------------------------------------*\

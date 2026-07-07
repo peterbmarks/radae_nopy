@@ -48,11 +48,11 @@ void usage(void) {
     fprintf(stderr, "  --model_name FILE       Path to model (ignored, uses built-in weights)\n");
     fprintf(stderr, "  -v LEVEL                Verbosity level (0, 1, or 2)\n");
     fprintf(stderr, "  --disable_unsync SECS   Test mode: disable unsync after SECS seconds (default 0 = disabled)\n");
+    fprintf(stderr, "  --v2                    Use RADE V2 (default: V1)\n");
+    fprintf(stderr, "  --write_snr_est FILE    Write per-symbol SNR estimates (float32) to FILE (V2 only)\n");
     fprintf(stderr, "\n");
     fprintf(stderr, "Reads IQ samples from stdin, writes vocoder features to stdout.\n");
     fprintf(stderr, "Input format: complex float32 (interleaved I,Q)\n");
-    fprintf(stderr, "Output format: float32 features, %d values per modem frame\n",
-            RADE_NZMF * RADE_FRAMES_PER_STEP * RADE_NB_TOTAL_FEATURES);
 }
 
 int main(int argc, char *argv[]) {
@@ -60,15 +60,18 @@ int main(int argc, char *argv[]) {
     char *model_name = "model19_check3/checkpoints/checkpoint_epoch_100.pth";
     int flags = 0;
     float disable_unsync = 0.0f;
+    char *snr_est_fn = NULL;
 
     static struct option long_options[] = {
         {"help",           no_argument,       NULL, 'h'},
         {"model_name",     required_argument, NULL, 'm'},
         {"disable_unsync", required_argument, NULL, 'd'},
+        {"v2",             no_argument,       NULL, '2'},
+        {"write_snr_est",  required_argument, NULL, 's'},
         {NULL,             0,                 NULL, 0}
     };
 
-    while ((opt = getopt_long(argc, argv, "hm:v:", long_options, NULL)) != -1) {
+    while ((opt = getopt_long(argc, argv, "hm:v:2s:", long_options, NULL)) != -1) {
         switch (opt) {
         case 'h':
             usage();
@@ -83,6 +86,12 @@ int main(int argc, char *argv[]) {
             break;
         case 'd':
             disable_unsync = atof(optarg);
+            break;
+        case '2':
+            flags |= RADE_MODE_V2;
+            break;
+        case 's':
+            snr_est_fn = optarg;
             break;
         default:
             usage();
@@ -124,6 +133,11 @@ int main(int argc, char *argv[]) {
 
     FILE *feoo_bits = fopen("eoo_rx.f32","wb");
 
+    /* Dynamic array for per-symbol SNR log (V2 only) */
+    int    snr_log_size = 0;
+    int    snr_log_cap  = 0;
+    float *snr_log      = NULL;
+
     /* Main processing loop */
     int frame_count = 0;
     int valid_count = 0;
@@ -150,10 +164,28 @@ int main(int argc, char *argv[]) {
             }
         }
 
+        if (snr_est_fn) {
+            if (snr_log_size == snr_log_cap) {
+                snr_log_cap = snr_log_cap ? snr_log_cap * 2 : 4096;
+                snr_log = realloc(snr_log, sizeof(float) * snr_log_cap);
+            }
+            snr_log[snr_log_size++] = rade_snr_est_float(r);
+        }
+
         frame_count++;
     }
 
     fprintf(stderr, "Processed %d modem frames, %d valid outputs\n", frame_count, valid_count);
+
+    if (snr_est_fn && snr_log) {
+        FILE *f = fopen(snr_est_fn, "wb");
+        if (f) {
+            fwrite(snr_log, sizeof(float), snr_log_size, f);
+            fclose(f);
+        } else {
+            fprintf(stderr, "error: cannot write %s\n", snr_est_fn);
+        }
+    }
 
     /* Cleanup */
     if (feoo_bits) {
@@ -162,6 +194,7 @@ int main(int argc, char *argv[]) {
     free(rx_in);
     free(features_out);
     free(eoo_out);
+    free(snr_log);
     rade_close(r);
     rade_finalize();
 

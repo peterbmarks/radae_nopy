@@ -93,12 +93,5 @@ target_link_libraries(rade_dec_v2_test rade opus m)
 add_executable(rade_enc_v2_test rade_enc_v2_test.c)
 target_link_libraries(rade_enc_v2_test rade opus m)
 
-# V2 transmitter: reads features from stdin, writes IQ samples to stdout
-add_executable(radae_v2_tx radae_v2_tx_nopy.c)
-target_link_libraries(radae_v2_tx rade opus m)
-
-# V2 receiver: reads IQ samples from stdin, writes features to stdout
-add_executable(radae_v2_rx radae_v2_rx_nopy.c)
-target_link_libraries(radae_v2_rx rade opus m)
 
 endif(NOT WIN32)
