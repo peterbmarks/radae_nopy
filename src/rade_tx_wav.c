@@ -235,7 +235,8 @@ static void usage(void) {
             "  Output WAV: mono 16-bit PCM @ %d Hz (RADE modulated signal)\n\n"
             "options:\n"
             "  -h, --help     Show this help\n"
-            "  -v LEVEL       Verbosity: 0=quiet  1=normal (default)  2=verbose\n",
+            "  -v LEVEL       Verbosity: 0=quiet  1=normal (default)  2=verbose\n"
+            "  --v2           Use RADE V2 (default: V1)\n",
             RADE_FS_SPEECH, RADE_FS);
 }
 
@@ -243,9 +244,11 @@ static void usage(void) {
 
 int main(int argc, char *argv[]) {
     int verbose = 1;
+    int use_v2  = 0;
     int opt;
     static struct option long_options[] = {
         {"help", no_argument, NULL, 'h'},
+        {"v2",   no_argument, NULL,  1 },
         {NULL,   0,           NULL, 0 }
     };
 
@@ -253,6 +256,7 @@ int main(int argc, char *argv[]) {
         switch (opt) {
             case 'h': usage(); return 0;
             case 'v': verbose = atoi(optarg); break;
+            case  1:  use_v2  = 1; break;
             default:  usage(); return 1;
         }
     }
@@ -316,6 +320,7 @@ int main(int argc, char *argv[]) {
     rade_initialize();
 
     int flags = (verbose < 2) ? RADE_VERBOSE_0 : 0;
+    if (use_v2) flags |= RADE_MODE_V2;
     /* model_name is ignored; built-in weights are used */
     char *model_name = "model19_check3/checkpoints/checkpoint_epoch_100.pth";
     struct rade *r = rade_open(model_name, flags);
