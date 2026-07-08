@@ -33,7 +33,7 @@ set(RADE_V2_DSP_SOURCES
 
 # RADE library (Python-free)
 add_library(rade SHARED
-    rade_api_nopy.c
+    rade_api.c
     rade_enc.c
     rade_dec.c
     rade_enc_data.c
@@ -54,11 +54,11 @@ set_target_properties(rade PROPERTIES
 if(NOT WIN32)
 
 # Standalone transmitter
-add_executable(radae_tx radae_tx_nopy.c)
+add_executable(radae_tx radae_tx.c)
 target_link_libraries(radae_tx rade opus m)
 
 # Standalone receiver
-add_executable(radae_rx radae_rx_nopy.c)
+add_executable(radae_rx radae_rx.c)
 target_link_libraries(radae_rx rade opus m)
 
 # Utility: convert real baseband to complex IQ

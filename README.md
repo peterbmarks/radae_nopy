@@ -1,8 +1,8 @@
-# C Port of RADE V1
+# C Port of RADE
 
-This repo contains a pure C implementaion of RADE V1, with all Python code and dependencies removed. It was derived from the [reference Python implementation](https://github.com/drowe67/radae) with the asistance of Claude Code. It has been reviewed, and carefully tested by the FreeDV team.  It passes the same [suite of automated tests](https://github.com/drowe67/radae/pull/66) as the Python version.
+A C library and set of tools implementing RADE V1 and V2. It was derived from the [reference Python implementation](https://github.com/drowe67/radae) with the assistance of Claude Code, reviewed and tested by the FreeDV team. It passes the same [suite of automated tests](https://github.com/drowe67/radae/pull/66) as the Python version.
 
-This has been tested on Linux and macOS.
+Tested on Linux and macOS.
 
 ## Build
 
@@ -14,34 +14,22 @@ cmake -DCMAKE_BUILD_TYPE=Release ..
 make -j$(nproc) # or -j$(sysctl -n hw.logicalcpu) on macOS
 ```
 
-## Demo tools
+## IQ Pipeline
 
-### RADE Demod: WAV RADE → WAV Speech Audio
+The primary interface is a streaming IQ pipeline using `radae_tx` and `radae_rx`.
+Input and output are complex float32 (interleaved I,Q) at 8000 Hz.
 
-Take a wav file off air and produce a demodulated wav file
-```
-Usage:
-rade_demod_wav [-v 0|1|2] <input.wav> <output.wav>
-```
+### RADE V1
 
-### RADE Modulate: WAV Speech Audio → WAV RADE
-
-Take a wav file with speech in it and produce a RADE OFDM encoded output wav file ready for transmission.
+#### Transmit: WAV → IQ
 
 ```
-Usage:
-rade_modulate_wav [-v 0|1|2] <intput.wav> <output.wav>
-```
-
-### Encode: WAV → IQ
-
-```
-sox ../voice.wav -r 16000 -t .s16 -c 1 - | \
+sox voice.wav -r 16000 -t .s16 -c 1 - | \
   ./src/lpcnet_demo -features /dev/stdin - | \
   ./src/radae_tx > tx.iq
 ```
 
-### Decode: IQ → WAV  
+#### Receive: IQ → WAV
 
 ```
 cat tx.iq | \
@@ -50,28 +38,95 @@ cat tx.iq | \
   sox -t .s16 -r 16000 -c 1 - decoded.wav
 ```
 
-### Decode: WAV RADE → WAV (multiple steps)
+### RADE V2
+
+#### Transmit: WAV → IQ
 
 ```
-sox ../FDV_offair.wav -r 8000 -e float -b 32 -c 1 -t raw - | \
-./src/real2iq | \
-./src/radae_rx > features.f32
+sox voice.wav -r 16000 -t .s16 -c 1 - | \
+  ./src/lpcnet_demo -features /dev/stdin - | \
+  ./src/radae_tx --v2 > tx.iq
+```
+
+#### Receive: IQ → WAV
+
+```
+cat tx.iq | \
+  ./src/radae_rx --v2 | \
+  ./src/lpcnet_demo -fargan-synthesis /dev/stdin - | \
+  sox -t .s16 -r 16000 -c 1 - decoded.wav
+```
+
+## WAV Convenience Tools
+
+These tools wrap the full pipeline for simple WAV-in, WAV-out use, handling
+the real→IQ conversion internally. Useful for quick tests with off-air recordings.
+
+### rade_modulate_wav: Speech WAV → RADE WAV
+
+```
+rade_modulate_wav [-v 0|1|2] <input.wav> <output.wav>
+```
+
+### rade_demod_wav: RADE WAV → Speech WAV
+
+```
+rade_demod_wav [-v 0|1|2] <input.wav> <output.wav>
+```
+
+### Decode from a real off-air WAV (manual steps)
+
+```
+sox FDV_offair.wav -r 8000 -e float -b 32 -c 1 -t raw - | \
+  ./src/real2iq | \
+  ./src/radae_rx > features.f32
 ./src/lpcnet_demo -fargan-synthesis features.f32 - | \
-sox -t .s16 -r 16000 -c 1 - decoded.wav
-play decoded.wav
+  sox -t .s16 -r 16000 -c 1 - decoded.wav
 ```
 
 ## Files
-| File                                          | Purpose                                             |
-| --------------------------------------------- | --------------------------------------------------- |
-| `src/rade_dsp.h/c`                            | Complex math utilities, constants, pilot generation |
-| `src/rade_ofdm.h/c`                           | OFDM modulation/demodulation with DFT matrices      |
-| `src/rade_bpf.h/c`                            | Complex bandpass filter                             |
-| `src/rade_tx.h/c`                             | Transmitter (encoder + OFDM mod)                    |
-| `src/rade_acq.h/c`                            | Acquisition and pilot detection                     |
-| `src/rade_rx.h/c`                             | Receiver with sync state machine                    |
-| `src/rade_api_nopy.c`                         | Python-free API implementation                      |
-| `src/radae_tx_nopy.c` / `src/radae_rx_nopy.c` | Standalone executables                              |
+
+### Common
+
+| File                | Purpose                                             |
+| ------------------- | --------------------------------------------------- |
+| `src/rade_api.h`    | Public API                                          |
+| `src/rade_api.c`    | API implementation (V1/V2 dispatch)                 |
+| `src/radae_tx.c`    | Standalone transmitter executable                   |
+| `src/radae_rx.c`    | Standalone receiver executable                      |
+| `src/lpcnet_demo.c` | Feature extraction / vocoder synthesis              |
+| `src/real2iq.c`     | Real baseband → complex IQ converter                |
+| `src/rade_dsp.h/c`  | Complex math utilities, constants, pilot generation |
+| `src/rade_bpf.h/c`  | Complex bandpass filter                             |
+
+### RADE V1
+
+| File                  | Purpose                                          |
+| --------------------- | ------------------------------------------------ |
+| `src/rade_ofdm.h/c`   | OFDM modulation/demodulation                     |
+| `src/rade_acq.h/c`    | Acquisition and pilot detection                  |
+| `src/rade_tx.h/c`     | Transmitter internals                            |
+| `src/rade_rx.h/c`     | Receiver with sync state machine                 |
+| `src/rade_enc.h/c`    | Neural encoder                                   |
+| `src/rade_dec.h/c`    | Neural decoder                                   |
+| `src/rade_enc_data.c` | Encoder weights                                  |
+| `src/rade_dec_data.c` | Decoder weights                                  |
+
+### RADE V2
+
+| File                     | Purpose                                          |
+| ------------------------ | ------------------------------------------------ |
+| `src/rade_v2_ofdm.h/c`   | OFDM modulation/demodulation                     |
+| `src/rade_tx_v2.h/c`     | Transmitter internals                            |
+| `src/rade_rx_v2.h/c`     | Receiver with sync state machine                 |
+| `src/rade_enc_v2.h/c`    | Neural encoder                                   |
+| `src/rade_dec_v2.h/c`    | Neural decoder                                   |
+| `src/rade_sync.h/c`      | Frame synchronisation                            |
+| `src/rade_enc_v2_data.c` | Encoder weights                                  |
+| `src/rade_dec_v2_data.c` | Decoder weights                                  |
+| `src/rade_sync_data.c`   | Sync weights                                     |
+
+## Directory Structure
 
 ```
 radae_nopy/
@@ -80,27 +135,33 @@ radae_nopy/
 │   └── BuildOpus.cmake
 └── src/
     ├── CMakeLists.txt
-    ├── lpcnet_demo.c          # Feature extraction
-    ├── radae_tx_nopy.c        # Transmitter
-    ├── radae_rx_nopy.c        # Receiver
-    ├── real2iq.c              # Real → IQ converter
     ├── rade_api.h             # Public API
-    ├── rade_api_nopy.c        # API implementation
+    ├── rade_api.c             # API implementation
+    ├── radae_tx.c             # Transmitter executable
+    ├── radae_rx.c             # Receiver executable
+    ├── lpcnet_demo.c          # Feature extraction / vocoder synthesis
+    ├── real2iq.c              # Real → IQ converter
     ├── rade_dsp.h/c           # DSP primitives
-    ├── rade_ofdm.h/c          # OFDM mod/demod
     ├── rade_bpf.h/c           # Bandpass filter
-    ├── rade_tx.h/c            # Transmitter internals
-    ├── rade_rx.h/c            # Receiver internals
-    ├── rade_acq.h/c           # Acquisition
-    ├── rade_enc.h/c           # Neural encoder
-    ├── rade_dec.h/c           # Neural decoder
-    ├── rade_enc_data.c        # Encoder weights
-    ├── rade_dec_data.c        # Decoder weights
-    └── opus-nnet.h.diff       # Opus patch
+    ├── rade_ofdm.h/c          # V1 OFDM mod/demod
+    ├── rade_acq.h/c           # V1 acquisition
+    ├── rade_tx.h/c            # V1 transmitter internals
+    ├── rade_rx.h/c            # V1 receiver internals
+    ├── rade_enc.h/c           # V1 neural encoder
+    ├── rade_dec.h/c           # V1 neural decoder
+    ├── rade_enc_data.c        # V1 encoder weights
+    ├── rade_dec_data.c        # V1 decoder weights
+    ├── rade_v2_ofdm.h/c       # V2 OFDM mod/demod
+    ├── rade_tx_v2.h/c         # V2 transmitter internals
+    ├── rade_rx_v2.h/c         # V2 receiver internals
+    ├── rade_enc_v2.h/c        # V2 neural encoder
+    ├── rade_dec_v2.h/c        # V2 neural decoder
+    ├── rade_sync.h/c          # V2 frame sync
+    ├── rade_enc_v2_data.c     # V2 encoder weights
+    ├── rade_dec_v2_data.c     # V2 decoder weights
+    └── rade_sync_data.c       # V2 sync weights
 ```
 
-The implementation uses built-in neural network weights (compiled from `rade_enc_data.c` and `rade_dec_data.c`), eliminating any need for Python or external model files at runtime.
+## Automated Testing
 
-# Automated testing
-
-A suite of tests will be run on every GitHub push.  They can also be run [locally](https://github.com/drowe67/radae/pull/66).
+A suite of tests runs on every GitHub push. They can also be run [locally](https://github.com/drowe67/radae/pull/66).
