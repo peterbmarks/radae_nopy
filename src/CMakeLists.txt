@@ -81,9 +81,13 @@ target_link_libraries(rade_bpf_test rade opus m)
 add_executable(rade_ber_test rade_ber_test.c)
 target_link_libraries(rade_ber_test rade m)
 
-# Callsign round-trip test: set callsign → EOO TX → OFDM demod → decode
-add_executable(rade_callsign_test rade_callsign_test.c)
-target_link_libraries(rade_callsign_test rade m)
+# V1 text round-trip test: set callsign → EOO TX → OFDM demod → decode
+add_executable(rade_v1_text_test rade_v1_text_test.c)
+target_link_libraries(rade_v1_text_test rade m)
+
+# V2 text round-trip test: stream "hello world" via BPSK data symbol channel
+add_executable(rade_v2_text_test rade_v2_text_test.c)
+target_link_libraries(rade_v2_text_test rade opus m)
 
 # V2 decoder test: reads latents from stdin, writes features to stdout
 add_executable(rade_dec_v2_test rade_dec_v2_test.c)

@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------------------*\
 
-  rade_callsign_test.c
+  rade_v1_text_test.c
 
   End-to-end round-trip test for rade_tx_set_eoo_callsign /
   rade_rx_get_eoo_callsign.
@@ -93,14 +93,15 @@ int main(void) {
     };
     int n_cases = (int)(sizeof(callsigns) / sizeof(callsigns[0]));
 
-    printf("rade_callsign_test: %d test cases\n", n_cases);
+    printf("rade_v1_text_test: %d test cases\n", n_cases);
 
     int n_pass = 0;
     for (int i = 0; i < n_cases; i++)
         n_pass += run_test(r, &ofdm, callsigns[i], 1);
 
     /* ---- summary ---- */
-    printf("\n%d/%d PASSED\n", n_pass, n_cases);
+    printf(n_pass == n_cases ? "\nPASS (%d/%d)\n" : "\nFAIL (%d/%d)\n",
+           n_pass, n_cases);
 
     rade_close(r);
     rade_finalize();
