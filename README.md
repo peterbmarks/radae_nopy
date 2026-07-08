@@ -4,6 +4,23 @@ A C library and set of tools implementing RADE V1 and V2. It was derived from th
 
 Tested on Linux and macOS.
 
+## Pipeline Overview
+
+RADE (Radio AutoEncoder) is a neural codec for transmitting speech over HF radio channels. Speech is converted to feature vectors by the FARGAN vocoder (built as part of Opus), encoded by a neural encoder, modulated onto an OFDM waveform, and transmitted as IQ samples. The receive path reverses this: IQ samples are demodulated, decoded by a neural decoder, and synthesised back to speech by FARGAN.
+
+```
+  Transmit:
+  speech WAV ──► lpcnet_demo ──► features ──► radae_tx ──► IQ samples ──► radio
+
+  Receive:
+  speech WAV ◄── lpcnet_demo ◄── features ◄── radae_rx ◄── IQ samples ◄── radio
+```
+
+The convenience tools `rade_tx_wav` and `rade_rx_wav` wrap this entire pipeline
+in a single command (WAV in, WAV out). For integration into SDR applications,
+the `rade_api.h` C API gives direct access to each stage; see
+[RadeAPIUse.md](RadeAPIUse.md) for details.
+
 ## Build
 
 ```
