@@ -66,12 +66,12 @@ add_executable(real2iq real2iq.c)
 target_link_libraries(real2iq m)
 
 # WAV demodulator: WAV in → demod → WAV out
-add_executable(rade_demod_wav rade_demod_wav.c)
-target_link_libraries(rade_demod_wav rade opus m)
+add_executable(rade_rx_wav rade_rx_wav.c)
+target_link_libraries(rade_rx_wav rade opus m)
 
 # WAV modulator: WAV in → features → RADE encode → OFDM mod → WAV out
-add_executable(rade_modulate_wav rade_modulate_wav.c)
-target_link_libraries(rade_modulate_wav rade opus m)
+add_executable(rade_tx_wav rade_tx_wav.c)
+target_link_libraries(rade_tx_wav rade opus m)
 
 # BPF test tool
 add_executable(rade_bpf_test rade_bpf_test.c kiss_fft.c kiss_fftr.c)

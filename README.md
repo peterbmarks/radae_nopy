@@ -62,16 +62,16 @@ cat tx.iq | \
 These tools wrap the full pipeline for simple WAV-in, WAV-out use, handling
 the real→IQ conversion internally. Useful for quick tests with off-air recordings.
 
-### rade_modulate_wav: Speech WAV → RADE WAV
+### rade_tx_wav: Speech WAV → RADE WAV
 
 ```
-rade_modulate_wav [-v 0|1|2] <input.wav> <output.wav>
+rade_tx_wav [-v 0|1|2] <input.wav> <output.wav>
 ```
 
-### rade_demod_wav: RADE WAV → Speech WAV
+### rade_rx_wav: RADE WAV → Speech WAV
 
 ```
-rade_demod_wav [-v 0|1|2] <input.wav> <output.wav>
+rade_rx_wav [-v 0|1|2] <input.wav> <output.wav>
 ```
 
 ### Decode from a real off-air WAV (manual steps)

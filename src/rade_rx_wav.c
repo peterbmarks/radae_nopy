@@ -381,8 +381,9 @@ int main(int argc, char *argv[]) {
 
     /* ---------------------------------------------------- demodulation loop */
     long iq_pos    = 0;
-    int  mf_count  = 0;   /* modem frames fed to RX */
-    int  vld_count = 0;   /* valid feature outputs */
+    int   mf_count  = 0;   /* modem frames fed to RX */
+    int   vld_count = 0;   /* valid feature outputs */
+    float snr_sum   = 0.0f; /* accumulate SNR while in sync */
 
     while (iq_pos < n_8k) {
         int  nin       = rade_nin(r);
@@ -407,6 +408,7 @@ int main(int argc, char *argv[]) {
 
         if (n_out > 0) {
             vld_count++;
+            snr_sum += rade_snrdB_3k_est(r);
             int n_frames = n_out / RADE_NB_TOTAL_FEATURES;
 
             for (int fi = 0; fi < n_frames; fi++) {
@@ -462,7 +464,9 @@ int main(int argc, char *argv[]) {
 
     /* ------------------------------------------------------------ summary */
     if (verbose >= 1) {
-        fprintf(stderr, "Modem frames: %d   valid: %d\n", mf_count, vld_count);
+        float snr_mean = vld_count ? snr_sum / vld_count : 0.0f;
+        fprintf(stderr, "Modem frames: %d   valid: %d   SNR: %.1f dB\n",
+                mf_count, vld_count, snr_mean);
         fprintf(stderr, "Output: %s  %.1f s  (%u bytes)\n",
                 output_file, (double)total_bytes / (2.0 * RADE_FS_SPEECH), total_bytes);
     }
