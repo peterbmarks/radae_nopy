@@ -333,7 +333,7 @@ int main(int argc, char *argv[]) {
     rade_initialize();
 
     int flags = (verbose < 2) ? RADE_VERBOSE_0 : 0;
-    /* model_name is ignored in the nopy build (built-in weights) */
+    /* model_name is ignored; built-in weights are used */
     char *model_name = "model19_check3/checkpoints/checkpoint_epoch_100.pth";
     struct rade *r = rade_open(model_name, flags);
     if (!r) {

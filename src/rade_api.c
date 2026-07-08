@@ -1,9 +1,8 @@
 /*---------------------------------------------------------------------------*\
 
-  rade_api_nopy.c
+  rade_api.c
 
   Library of API functions that implement the Radio Autoencoder API.
-  Pure C implementation - no Python dependency.
 
 \*---------------------------------------------------------------------------*/
 
@@ -34,7 +33,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#define VERSION 2  /* Bump when API changes; version 2 = Python-free */
+#define VERSION 2  /* Bump when API changes */
 
 #include <assert.h>
 #include <stdlib.h>
@@ -50,11 +49,11 @@
 \*---------------------------------------------------------------------------*/
 
 void rade_initialize(void) {
-    /* No initialization needed without Python */
+    /* No initialization needed */
 }
 
 void rade_finalize(void) {
-    /* No finalization needed without Python */
+    /* No finalization needed */
 }
 
 struct rade *rade_open(char model_file[], int flags) {

@@ -31,7 +31,7 @@ set(RADE_V2_DSP_SOURCES
     rade_rx_v2.c
 )
 
-# RADE library (Python-free)
+# RADE library
 add_library(rade SHARED
     rade_api.c
     rade_enc.c
@@ -43,7 +43,7 @@ add_library(rade SHARED
     ${RADE_V2_DSP_SOURCES}
 )
 target_link_libraries(rade opus m)
-target_compile_definitions(rade PRIVATE -DIS_BUILDING_RADE_API=1 -DRADE_PYTHON_FREE=1)
+target_compile_definitions(rade PRIVATE -DIS_BUILDING_RADE_API=1)
 
 set_target_properties(rade PROPERTIES
     VERSION 0.1

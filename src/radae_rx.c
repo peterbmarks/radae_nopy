@@ -1,8 +1,8 @@
 /*---------------------------------------------------------------------------*\
 
-  radae_rx_nopy.c
+  radae_rx.c
 
-  RADAE streaming receiver - Python-free version.
+  RADAE streaming receiver.
   Reads IQ samples from stdin, writes features to stdout.
 
 \*---------------------------------------------------------------------------*/
@@ -43,7 +43,7 @@
 #include "rade_dsp.h"
 
 void usage(void) {
-    fprintf(stderr, "usage: radae_rx_nopy [options]\n");
+    fprintf(stderr, "usage: radae_rx [options]\n");
     fprintf(stderr, "  -h, --help              Show this help\n");
     fprintf(stderr, "  --model_name FILE       Path to model (ignored, uses built-in weights)\n");
     fprintf(stderr, "  -v LEVEL                Verbosity level (0, 1, or 2)\n");
