@@ -2,16 +2,14 @@
 
   rade_v1_text_test.c
 
-  End-to-end round-trip test for rade_tx_set_eoo_callsign /
-  rade_rx_get_eoo_callsign.
+  End-to-end round-trip test for the V1 EOO text channel.
 
   For each test callsign the test:
-    1. Sets the callsign in the EOO Tx bits via rade_tx_set_eoo_callsign().
+    1. Encodes the callsign into EOO bits and sets them via rade_tx_set_eoo_bits().
     2. Generates the modulated EOO frame via rade_tx_eoo().
     3. Demodulates the frame (no noise, perfect timing) via
        rade_ofdm_demod_eoo().
-    4. Decodes the callsign from the soft-decision bits via
-       rade_rx_get_eoo_callsign().
+    4. Decodes the callsign from the soft-decision bits.
     5. Checks the decoded string matches the original.
 
   Returns 0 on full pass, 1 if any test fails.
@@ -27,14 +25,46 @@
 #include "rade_dsp.h"
 #include "rade_ofdm.h"
 
+#define CALLSIGN_MAX 8  /* max callsign chars; 8 × 7 bits = 56 bits of EOO */
+
+static void callsign_encode(struct rade *r, const char *callsign) {
+    int n_eoo_bits = rade_n_eoo_bits(r);
+    float *bits = (float *)calloc(n_eoo_bits, sizeof(float));
+    assert(bits);
+    int src_len = (int)strlen(callsign);
+    for (int i = 0; i < CALLSIGN_MAX; i++) {
+        unsigned char c = (i < src_len) ? (unsigned char)callsign[i] : ' ';
+        for (int b = 0; b < 7; b++) {
+            int bit = (c >> (6 - b)) & 1;
+            bits[i * 7 + b] = bit ? 1.0f : -1.0f;
+        }
+    }
+    rade_tx_set_eoo_bits(r, bits);
+    free(bits);
+}
+
+static int callsign_decode(const float *eoo_bits, int n_eoo_bits, char *out) {
+    if (n_eoo_bits < CALLSIGN_MAX * 7) { out[0] = '\0'; return 0; }
+    for (int i = 0; i < CALLSIGN_MAX; i++) {
+        unsigned char c = 0;
+        for (int b = 0; b < 7; b++)
+            c |= (unsigned char)(((eoo_bits[i * 7 + b] > 0.0f) ? 1 : 0) << (6 - b));
+        out[i] = (char)c;
+    }
+    out[CALLSIGN_MAX] = '\0';
+    int len = CALLSIGN_MAX;
+    while (len > 0 && out[len - 1] == ' ') out[--len] = '\0';
+    return len;
+}
+
 /*---------------------------------------------------------------------------*\
                               HELPERS
 \*---------------------------------------------------------------------------*/
 
 static int run_test(struct rade *r, rade_ofdm *ofdm,
                     const char *callsign, int verbose) {
-    /* --- set callsign in the TX EOO bits --- */
-    rade_tx_set_eoo_callsign(r, callsign);
+    /* --- encode callsign into EOO bits --- */
+    callsign_encode(r, callsign);
 
     /* --- modulate the EOO frame --- */
     int n_eoo_out = rade_n_tx_eoo_out(r);
@@ -52,8 +82,8 @@ static int run_test(struct rade *r, rade_ofdm *ofdm,
     rade_ofdm_demod_eoo(ofdm, eoo_bits, tx_eoo, 0);
 
     /* --- decode callsign from soft decisions --- */
-    char decoded[RADE_EOO_CALLSIGN_MAX + 1];
-    int decoded_len = rade_rx_get_eoo_callsign(eoo_bits, n_eoo_bits, decoded);
+    char decoded[CALLSIGN_MAX + 1];
+    int decoded_len = callsign_decode(eoo_bits, n_eoo_bits, decoded);
 
     int pass = (strcmp(decoded, callsign) == 0);
 
