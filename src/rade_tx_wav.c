@@ -235,7 +235,7 @@ static void usage(void) {
             "  Output WAV: mono 16-bit PCM @ %d Hz (RADE modulated signal)\n\n"
             "options:\n"
             "  -h, --help     Show this help\n"
-            "  -v LEVEL       Verbosity: 0=quiet  1=normal (default)  2=verbose\n"
+            "  -v LEVEL       Verbosity: 0=quiet  1=normal (default)\n"
             "  --v2           Use RADE V2 (default: V1)\n",
             RADE_FS_SPEECH, RADE_FS);
 }

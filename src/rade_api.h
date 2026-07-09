@@ -80,8 +80,10 @@ extern "C" {
 #define RADE_USE_C_ENCODER 0x1
 #define RADE_USE_C_DECODER 0x2
 #define RADE_FOFF_TEST     0x4                // test mode used only by developers
-#define RADE_VERBOSE_0     0x8                // reduce verbosity to "quiet"
+#define RADE_VERBOSE_0     0x8                // reduce verbosity to "quiet" (no per-frame output)
 #define RADE_MODE_V2       0x10               // select RADE V2 (default is V1)
+#define RADE_VERBOSE_TERSE 0x20               // terse per-frame status (state, sig, f_off, snr, eoo)
+#define RADE_VERBOSE_FULL  0x40               // full per-frame status (all fields)
 
 // Must be called BEFORE any other RADE functions as this
 // initializes internal library state.

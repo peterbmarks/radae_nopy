@@ -476,7 +476,7 @@ int rade_rx_v2_process(rade_rx_v2_state *rx, float *features_out,
     rx->s++;
 
     /* Print verbose status */
-    if (rx->verbose) {
+    if (rx->verbose >= 3) {
         fprintf(stderr, "%4d %4d %s nin: %3d "
                 "sig: %d sine: %d c: %2d nsd: %d nsf: %d c1: %2d "
                 "fs: %d delta_hat: %3.0f g: %3.0f f_off: %5.2f f_off_g: %5.2f "
@@ -489,6 +489,11 @@ int rade_rx_v2_process(rade_rx_v2_state *rx, float *features_out,
                 rx->delta_hat, rx->delta_hat_g,
                 rx->freq_offset, rx->freq_offset_g,
                 rx->Ry_max, rx->snr_est_dB, rx->eoo_smooth);
+    } else if (rx->verbose >= 2) {
+        fprintf(stderr, "%4d %4d %s sig: %d f_off: %5.2f snr: %5.1f dB eoo: %.3f\n",
+                rx->s, rx->i,
+                (rx->state == RADE_RX_V2_IDLE) ? "idle" : "sync",
+                sig_det, rx->freq_offset, rx->snr_est_dB, rx->eoo_smooth);
     }
 
     rx->state = next_state;

@@ -87,8 +87,10 @@ struct rade *rade_open(char model_file[], int flags) {
             return NULL;
         }
 
-        if (flags & RADE_VERBOSE_0)
-            r->rx_v2.verbose = 0;
+        if (flags & RADE_VERBOSE_0)        r->rx_v2.verbose = 0;
+        else if (flags & RADE_VERBOSE_FULL)  r->rx_v2.verbose = 3;
+        else if (flags & RADE_VERBOSE_TERSE) r->rx_v2.verbose = 2;
+        else                                 r->rx_v2.verbose = 0;
 
         fprintf(stderr, "rade_open: V2 n_features_in=%d Nmf=%d Neoo=%d\n",
                 rade_tx_v2_n_features_in(),

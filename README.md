@@ -10,10 +10,12 @@ RADE (Radio AutoEncoder) is a neural codec for transmitting speech over HF radio
 
 ```
   Transmit:
-  speech WAV ──► lpcnet_demo ──► features ──► radae_tx ──► IQ samples ──► radio
+  speech WAV ──► lpcnet_demo ──► features ──► radae_tx ──► IQ @ 8 kHz ──► radio
+              (16 kHz)                                      (radio interface)
 
   Receive:
-  speech WAV ◄── lpcnet_demo ◄── features ◄── radae_rx ◄── IQ samples ◄── radio
+  speech WAV ◄── lpcnet_demo ◄── features ◄── radae_rx ◄── IQ @ 8 kHz ◄── radio
+              (16 kHz)                                      (radio interface)
 ```
 
 The convenience tools `rade_tx_wav` and `rade_rx_wav` wrap this entire pipeline
@@ -34,7 +36,8 @@ make -j$(nproc) # or -j$(sysctl -n hw.logicalcpu) on macOS
 ## IQ Pipeline
 
 The primary interface is a streaming IQ pipeline using `radae_tx` and `radae_rx`.
-Input and output are complex float32 (interleaved I,Q) at 8000 Hz.
+The radio interface — IQ samples produced by `radae_tx` and consumed by `radae_rx` — is
+complex float32 (interleaved I,Q) at 8000 Hz. Speech I/O runs at 16000 Hz.
 
 ### RADE V1
 
@@ -99,13 +102,13 @@ no additional tools required.
 ### rade_tx_wav: Speech WAV → RADE WAV
 
 ```
-rade_tx_wav [-v 0|1|2] <input.wav> <output.wav>
+rade_tx_wav [--v2] [-v 0|1] <input.wav> <output.wav>
 ```
 
 ### rade_rx_wav: RADE WAV → Speech WAV
 
 ```
-rade_rx_wav [-v 0|1|2] <input.wav> <output.wav>
+rade_rx_wav [--v2] [-v 0|1|2|3] <input.wav> <output.wav>
 ```
 
 ### Decode from a real off-air WAV (manual steps)

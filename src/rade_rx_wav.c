@@ -336,7 +336,10 @@ int main(int argc, char *argv[]) {
     /* ------------------------------------------------------ open RADE receiver */
     rade_initialize();
 
-    int flags = (verbose < 2) ? RADE_VERBOSE_0 : 0;
+    int flags = 0;
+    if (verbose == 0) flags |= RADE_VERBOSE_0;
+    else if (verbose == 2) flags |= RADE_VERBOSE_TERSE;
+    else if (verbose >= 3) flags |= RADE_VERBOSE_FULL;
     if (use_v2) flags |= RADE_MODE_V2;
     /* model_name is ignored; built-in weights are used */
     char *model_name = "model19_check3/checkpoints/checkpoint_epoch_100.pth";
