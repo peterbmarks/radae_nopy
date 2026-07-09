@@ -110,8 +110,10 @@ struct rade {
 RADE_EXPORT struct rade *rade_open(char model_file[], int flags);
 RADE_EXPORT void rade_close(struct rade *r);
 
-// Allows API users to determine if the API has changed
+// Returns major version — incremented on breaking API changes
 RADE_EXPORT int rade_version(void);
+// Returns minor version — incremented on non-breaking additions
+RADE_EXPORT int rade_version_minor(void);
 
 // helpers to set up arrays
 RADE_EXPORT int rade_n_tx_out(struct rade *r);

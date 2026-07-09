@@ -33,7 +33,8 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#define VERSION 2  /* Bump when API changes */
+#define VERSION       2  /* Bump on breaking API changes */
+#define VERSION_MINOR 1  /* Bump on non-breaking additions (e.g. new flags, new functions) */
 
 #include <assert.h>
 #include <stdlib.h>
@@ -137,6 +138,10 @@ void rade_close(struct rade *r) {
 
 int rade_version(void) {
     return VERSION;
+}
+
+int rade_version_minor(void) {
+    return VERSION_MINOR;
 }
 
 int rade_n_tx_out(struct rade *r) {
