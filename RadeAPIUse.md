@@ -59,8 +59,7 @@ Call when finished with RADE to release library-level resources.
 
 ### `struct rade *rade_open(char model_file[], int flags)`
 
-Creates and returns a RADE context. `model_file` is accepted for compatibility
-but ignored — built-in weights are always used. `flags` is a bitwise OR of:
+Creates and returns a RADE context. `model_file` is used for user supplied models, set to "" for normal use (built-in weights). `flags` is a bitwise OR of:
 
 | Flag | Value | Meaning |
 | --- | --- | --- |
