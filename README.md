@@ -163,6 +163,33 @@ sox FDV_offair.wav -r 8000 -e float -b 32 -c 1 -t raw - | \
 | `src/rade_dec_v2_data.c` | Decoder weights                                  |
 | `src/rade_sync_data.c`   | Sync weights                                     |
 
+## Verifying RADE Integration
+
+Verification of your RADE integration is essential before any on-air use. A loss test confirms that feature vectors are passing correctly through your encode/decode pipeline, catching issues such as dropped sample buffers or signal processing errors before they manifest as degraded audio on air.
+
+Before testing a hardware or software integration, establish a software-only loss baseline using the C port. This is the C port equivalent of the [reference Python verification](https://github.com/drowe67/radae/blob/main/README.md#verifying-rade-integration) in the radae repo.
+
+Run from `radae_nopy/build` (requires the `radae` Python repo at `~/radae` for `loss.py`):
+
+```
+cd radae_nopy/build
+./src/lpcnet_demo -features ../wav/all.wav features_in.f32
+cat features_in.f32 | ./src/radae_tx --v2 > tx_c.f32
+cat tx_c.f32 | ./src/radae_rx --v2 -v 0 > features_rx_c.f32
+PYTHONPATH=~/radae python3 ~/radae/loss.py features_in.f32 features_rx_c.f32 --clip_start 100 --clip_end 300
+```
+
+Expected output (software-only reference, `wav/all.wav`, model `250725`):
+```
+loss: 0.080 start: 224 acq_time:  1.24 s
+```
+
+This matches the Python reference result (loss: 0.081) to within ±10%. When testing a real integration, a loss within ±10% of this figure is considered a pass.
+
+## Automated Testing
+
+A suite of tests runs on every GitHub push. They can also be run [locally](https://github.com/drowe67/radae/pull/66).
+
 ## Directory Structure
 
 ```
@@ -198,7 +225,3 @@ radae_nopy/
     ├── rade_dec_v2_data.c     # V2 decoder weights
     └── rade_sync_data.c       # V2 sync weights
 ```
-
-## Automated Testing
-
-A suite of tests runs on every GitHub push. They can also be run [locally](https://github.com/drowe67/radae/pull/66).
