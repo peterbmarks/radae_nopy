@@ -1,8 +1,9 @@
-# RADE V1 API Usage
+# RADE API Usage
 
 This document describes the public C API of the Radio Autoencoder (RADE)
 library as declared in [src/rade_api.h](src/rade_api.h). The API exposes a
-single context that contains one transmitter (Tx) and one receiver (Rx).
+single context that contains one transmitter (Tx) and one receiver (Rx), and
+supports both RADE V1 and RADE V2 via the `RADE_MODE_V2` flag.
 
 All functions are declared `extern "C"` so the library can be used from both C
 and C++. On Windows the symbols are exported/imported via `__declspec` and use
@@ -30,13 +31,15 @@ the `__stdcall` calling convention (handled automatically by the
   | `RADE_MODEM_SAMPLE_RATE` | 8000 | modem (IQ) waveform sample rate |
   | `RADE_SPEECH_SAMPLE_RATE` | 16000 | speech sample rate |
 
-- **Features** — RADE does not encapsulate the vocoder in this version. The
-  caller supplies/consumes vocoder *feature* vectors (floats). `rade_tx()`
-  accepts features and produces modem IQ samples; `rade_rx()` accepts modem IQ
-  samples and produces features.
+- **Features** — the API operates on FARGAN vocoder *feature* vectors rather
+  than speech audio. `rade_tx()` accepts features and produces modem IQ samples;
+  `rade_rx()` accepts modem IQ samples and produces features. The caller is
+  responsible for converting speech to features (Tx) and synthesising speech
+  from features (Rx) using `lpcnet_demo`. As an example the `rade_tx_wav` /
+  `rade_rx_wav` convenience tools wrap this full pipeline internally.
 
-- **Soft-decision bits** — EOO (End-of-Over) bits are represented as floats in
-  `+1.0` / `-1.0` form (i.e. *not* `1`/`0`).
+- **Soft-decision bits** — aux text channel bits (V1 EOO bits, V2 BPSK data
+  symbols) are represented as floats in `+1.0` / `-1.0` form (i.e. *not* `1`/`0`).
 
 - **Single context** — this version supports a single `struct rade` context,
   with exactly one Tx and one Rx inside it.
@@ -56,15 +59,17 @@ Call when finished with RADE to release library-level resources.
 
 ### `struct rade *rade_open(char model_file[], int flags)`
 
-Creates and returns a RADE context. `model_file` names the model weights file
-to load. `flags` is a bitwise OR of:
+Creates and returns a RADE context. `model_file` is used for user supplied models, set to "" for normal use (built-in weights). `flags` is a bitwise OR of:
 
 | Flag | Value | Meaning |
 | --- | --- | --- |
 | `RADE_USE_C_ENCODER` | `0x1` | use the C encoder implementation |
 | `RADE_USE_C_DECODER` | `0x2` | use the C decoder implementation |
 | `RADE_FOFF_TEST` | `0x4` | frequency-offset test mode (developers only) |
-| `RADE_VERBOSE_0` | `0x8` | reduce verbosity to "quiet" |
+| `RADE_VERBOSE_0` | `0x8` | quiet — suppress all per-frame status output |
+| `RADE_MODE_V2` | `0x10` | select RADE V2 (default is V1) |
+| `RADE_VERBOSE_TERSE` | `0x20` | terse per-frame status (state, sig, f_off, snr, eoo) |
+| `RADE_VERBOSE_FULL` | `0x40` | full per-frame status (all diagnostic fields) |
 
 Returns a pointer to a `struct rade` context, used in all subsequent calls.
 
@@ -74,7 +79,11 @@ Closes and frees a context previously returned by `rade_open()`.
 
 ### `int rade_version(void)`
 
-Returns the API version, allowing callers to detect API changes.
+Returns the major API version — incremented on breaking changes.
+
+### `int rade_version_minor(void)`
+
+Returns the minor API version — incremented on non-breaking additions.
 
 ### The `struct rade` context
 
@@ -84,14 +93,14 @@ struct rade {
     int auxdata;
     int bottleneck;
 
-    rade_tx_state tx;   /* Transmitter state */
-    rade_rx_state rx;   /* Receiver state */
+    rade_tx_state    tx;     /* V1 transmitter state */
+    rade_rx_state    rx;     /* V1 receiver state    */
+    rade_tx_v2_state tx_v2;  /* V2 transmitter state */
+    rade_rx_v2_state rx_v2;  /* V2 receiver state    */
 };
 ```
 
-Treat this as an opaque handle through the API functions; the internal Tx/Rx
-state structs are defined in [src/rade_tx.h](src/rade_tx.h) and
-[src/rade_rx.h](src/rade_rx.h).
+Treat this as an opaque handle through the API functions.
 
 ---
 
@@ -103,10 +112,10 @@ the context configuration, so call them after `rade_open()`.
 | Function | Returns |
 | --- | --- |
 | `int rade_n_tx_out(struct rade *r)` | number of `RADE_COMP` samples produced per `rade_tx()` call |
-| `int rade_n_tx_eoo_out(struct rade *r)` | number of `RADE_COMP` samples produced by `rade_tx_eoo()` |
+| `int rade_n_tx_eoo_out(struct rade *r)` | number of `RADE_COMP` samples produced by `rade_tx_eoo()` — V1 only |
 | `int rade_nin_max(struct rade *r)` | maximum number of input samples ever required by `rade_rx()` (use for buffer allocation) |
 | `int rade_n_features_in_out(struct rade *r)` | number of feature floats per Tx input frame / Rx output frame |
-| `int rade_n_eoo_bits(struct rade *r)` | number of EOO soft-decision bits |
+| `int rade_n_eoo_bits(struct rade *r)` | number of EOO soft-decision bits — V1 only |
 
 ---
 
@@ -121,48 +130,30 @@ Encodes one frame of input `features_in[]` into modem IQ samples written to
 - `tx_out[]` must have room for `rade_n_tx_out(r)` `RADE_COMP` samples.
 - Returns the number of `RADE_COMP` samples written to `tx_out[]`.
 
-> Note: the vocoder is not encapsulated by the API in this version — the caller
-> is responsible for producing the feature vectors.
+> Note: the API operates on feature vectors — the caller is responsible for
+> converting speech to features (Tx) and synthesising speech from features (Rx),
+> e.g. via `lpcnet_demo` or the equivalent Opus/FARGAN library calls.
 
-### `void rade_tx_set_eoo_bits(struct rade *r, float eoo_bits[])`
+### `void rade_tx_set_eoo_bits(struct rade *r, float eoo_bits[])` — V1 only (aux text channel)
 
-Sets the EOO bits that will be embedded in the End-of-Over frame. `eoo_bits[]`
-must contain `rade_n_eoo_bits(r)` floats in `+1.0` / `-1.0` form (not `1`/`0`).
+Sets the EOO bits to be embedded in the End-of-Over frame. `eoo_bits[]` must
+contain `rade_n_eoo_bits(r)` floats in `+1.0` / `-1.0` form (not `1`/`0`).
+Text encoding (callsign, grid square, etc.) is the responsibility of the caller's
+text stack above this API.
 
-### Callsign helpers
-
-```c
-#define RADE_EOO_CALLSIGN_MAX 8
-```
-
-The EOO frame can carry a callsign. The maximum callsign length is
-`RADE_EOO_CALLSIGN_MAX` (8) characters, not counting the null terminator
-(8 chars × 7 bits = 56 bits, well within the 180 available EOO bits).
-
-#### `void rade_tx_set_eoo_callsign(struct rade *r, const char *callsign)`
-
-Encodes a callsign string into the EOO bits ready for transmission.
-
-- `callsign` must be a null-terminated ASCII string of at most
-  `RADE_EOO_CALLSIGN_MAX` characters.
-- Only the first `RADE_EOO_CALLSIGN_MAX * 7` bits of the stored EOO array are
-  overwritten; the remaining EOO bits are left unchanged.
-
-#### `int rade_rx_get_eoo_callsign(const float *eoo_bits, int n_eoo_bits, char *callsign_out)`
-
-Decodes a callsign from received EOO soft-decision bits.
-
-- `eoo_bits`: array of `n_eoo_bits` floats in `+1` / `-1` form (as returned by
-  `rade_rx()`).
-- `callsign_out`: caller-supplied buffer of at least
-  `RADE_EOO_CALLSIGN_MAX + 1` bytes.
-- Returns the number of characters written, not counting the null terminator.
-
-### `int rade_tx_eoo(struct rade *r, RADE_COMP tx_eoo_out[])`
+### `int rade_tx_eoo(struct rade *r, RADE_COMP tx_eoo_out[])` — V1 only (aux text channel)
 
 Generates the final End-of-Over frame at the end of an over. `tx_eoo_out[]`
 must have room for `rade_n_tx_eoo_out(r)` `RADE_COMP` samples. Returns the
 number of `RADE_COMP` samples written.
+
+### V2: BPSK data symbol
+
+#### `void rade_tx_set_data_symbol(struct rade *r, float symbol)`
+
+Sets the BPSK data symbol to be transmitted in the next modem frame.
+`symbol` must be `+1.0` or `-1.0`. Call this before each `rade_tx()` to
+stream one bit per frame (~25 bits/s auxiliary channel).
 
 ---
 
@@ -181,10 +172,11 @@ Processes `rade_nin(r)` input IQ samples from `rx_in[]`.
 
 - `features_out[]`: receives decoded feature floats; size it with
   `rade_n_features_in_out(r)`.
-- `has_eoo_out`: set by the function — non-zero means `eoo_out[]` contains
-  valid End-of-Over soft-decision bits.
-- `eoo_out[]`: receives EOO soft-decision bits from the QPSK symbols in
-  `...IQIQI...` order; size it with `rade_n_eoo_bits(r)`.
+- `has_eoo_out`: V1 only (aux text channel) — set by the function when `eoo_out[]`
+  contains valid End-of-Over soft-decision bits. Pass `NULL` for V2.
+- `eoo_out[]`: V1 only (aux text channel) — receives EOO soft-decision bits from
+  the QPSK symbols in `...IQIQI...` order; size it with `rade_n_eoo_bits(r)`.
+  Pass `NULL` for V2.
 - `rx_in[]`: input IQ samples (`rade_nin(r)` of them).
 
 Returns non-zero if `features_out[]` contains valid output; the returned value
@@ -199,25 +191,33 @@ Returns non-zero when the receiver is currently in sync.
 Returns the current frequency offset of the received signal. Valid only when
 `rade_sync(r) != 0`.
 
-### `int rade_snrdB_3k_est(struct rade *r)`
+### `float rade_snrdB_3k_est(struct rade *r)`
 
 Returns the current SNR estimate in dB (3 kHz noise bandwidth) of the received
-signal. Valid only when `rade_sync(r) != 0`.
+signal as a float. Valid only when `rade_sync(r) != 0`.
 
 ### `void rade_set_disable_unsync(struct rade *r, float seconds)`
 
 Test mode: disables the unsync mechanism for the given number of seconds
 (`0` = disabled, i.e. normal unsync behavior).
 
+### V2: BPSK data symbol
+
+#### `float rade_rx_get_data_symbol(struct rade *r)`
+
+Returns the soft-decision BPSK data symbol received in the last modem frame.
+Valid after `rade_rx()` returns a value greater than zero. Positive values
+indicate a `+1` bit, negative values indicate a `-1` bit.
+
 ---
 
 ## Typical usage
 
-### Transmit loop
+### RADE V1 transmit loop
 
 ```c
 rade_initialize();
-struct rade *r = rade_open("model_file", RADE_USE_C_ENCODER | RADE_USE_C_DECODER);
+struct rade *r = rade_open("", RADE_VERBOSE_0);
 
 int n_features = rade_n_features_in_out(r);
 int n_tx       = rade_n_tx_out(r);
@@ -225,29 +225,29 @@ int n_tx       = rade_n_tx_out(r);
 float     features_in[n_features];
 RADE_COMP tx_out[n_tx];
 
-/* optional: embed a callsign in the End-of-Over frame */
-rade_tx_set_eoo_callsign(r, "N0CALL");
+/* optional: set EOO bits from your text stack before the end of over */
+/* rade_tx_set_eoo_bits(r, eoo_bits); */
 
 while (have_more_speech()) {
-    fill_features(features_in);                 /* caller's vocoder */
+    fill_features(features_in);                  /* caller's feature extractor */
     int nout = rade_tx(r, tx_out, features_in);
     send_iq(tx_out, nout);                       /* to the radio */
 }
 
-/* end of over */
-RADE_COMP eoo_out[rade_n_tx_eoo_out(r)];
-int neoo = rade_tx_eoo(r, eoo_out);
-send_iq(eoo_out, neoo);
+/* optional: transmit End-of-Over frame (aux text channel) */
+/* RADE_COMP eoo_out[rade_n_tx_eoo_out(r)];
+   int neoo = rade_tx_eoo(r, eoo_out);
+   send_iq(eoo_out, neoo); */
 
 rade_close(r);
 rade_finalize();
 ```
 
-### Receive loop
+### RADE V1 receive loop
 
 ```c
 rade_initialize();
-struct rade *r = rade_open("model_file", RADE_USE_C_ENCODER | RADE_USE_C_DECODER);
+struct rade *r = rade_open("", RADE_VERBOSE_0);
 
 int n_features = rade_n_features_in_out(r);
 int n_eoo      = rade_n_eoo_bits(r);
@@ -264,19 +264,77 @@ for (;;) {
     int nout = rade_rx(r, features_out, &has_eoo, eoo_out, rx_in);
 
     if (nout) {
-        use_features(features_out, nout);        /* caller's vocoder */
+        write_to_fargan(features_out, nout);     /* write features to FARGAN vocoder */
     }
     if (has_eoo) {
-        char callsign[RADE_EOO_CALLSIGN_MAX + 1];
-        rade_rx_get_eoo_callsign(eoo_out, n_eoo, callsign);
-        /* end of over detected; callsign decoded */
+        /* end of over — pass eoo_out[] to your text stack for decoding */
     }
 
     if (rade_sync(r)) {
         float foff = rade_freq_offset(r);
-        int   snr  = rade_snrdB_3k_est(r);
+        float snr  = rade_snrdB_3k_est(r);
         (void)foff; (void)snr;
     }
+}
+
+rade_close(r);
+rade_finalize();
+```
+
+### RADE V2 transmit loop
+
+```c
+rade_initialize();
+struct rade *r = rade_open("", RADE_MODE_V2 | RADE_VERBOSE_0);
+
+int n_features = rade_n_features_in_out(r);
+int n_tx       = rade_n_tx_out(r);
+
+float     features_in[n_features];
+RADE_COMP tx_out[n_tx];
+
+int bit_index = 0;
+/* user-supplied 25 bits/s text encoded as BPSK bit stream */
+float data_bits[] = { 1.0f, -1.0f, 1.0f, /* ... */ }; 
+
+while (have_more_speech()) {
+    rade_tx_set_data_symbol(r, data_bits[bit_index++ % n_bits]);
+    fill_features(features_in);                  /* caller's feature extractor */
+    int nout = rade_tx(r, tx_out, features_in);
+    send_iq(tx_out, nout);
+}
+
+RADE_COMP eoo_out[rade_n_tx_eoo_out(r)];
+rade_tx_eoo(r, eoo_out);
+send_iq(eoo_out, rade_n_tx_eoo_out(r));
+
+rade_close(r);
+rade_finalize();
+```
+
+### RADE V2 receive loop
+
+```c
+rade_initialize();
+struct rade *r = rade_open("", RADE_MODE_V2 | RADE_VERBOSE_0);
+
+int n_features = rade_n_features_in_out(r);
+RADE_COMP rx_in[rade_nin_max(r)];
+float     features_out[n_features];
+
+for (;;) {
+    int nin = rade_nin(r);
+    read_iq(rx_in, nin);
+
+    int has_eoo = 0;
+    int nout = rade_rx(r, features_out, &has_eoo, NULL, rx_in);
+
+    if (nout) {
+        write_to_fargan(features_out, nout);     /* write features to FARGAN vocoder */
+        float sym = rade_rx_get_data_symbol(r);  /* +ve = 1, -ve = 0 */
+        process_data_bit(sym > 0.0f ? 1 : 0);    /* user-supplied BPSK bit stream decoder */
+    }
+    if (has_eoo) { /* end of over */ }
 }
 
 rade_close(r);
@@ -291,22 +349,23 @@ rade_finalize();
 | --- | --- |
 | `rade_initialize` | initialize library (call first) |
 | `rade_finalize` | tear down library (call last) |
-| `rade_open` | create a Tx/Rx context |
+| `rade_open` | create a Tx/Rx context (V1 or V2 via flags) |
 | `rade_close` | destroy a context |
-| `rade_version` | query API version |
+| `rade_version` | query major API version (breaking changes) |
+| `rade_version_minor` | query minor API version (non-breaking additions) |
 | `rade_n_tx_out` | Tx output samples per frame |
-| `rade_n_tx_eoo_out` | Tx EOO output samples |
+| `rade_n_tx_eoo_out` | Tx EOO output samples — V1 only |
 | `rade_nin_max` | max Rx input samples (buffer sizing) |
 | `rade_n_features_in_out` | feature floats per frame |
-| `rade_n_eoo_bits` | number of EOO bits |
+| `rade_n_eoo_bits` | number of EOO bits — V1 only |
 | `rade_tx` | encode features → IQ samples |
-| `rade_tx_set_eoo_bits` | set raw EOO bits |
-| `rade_tx_set_eoo_callsign` | encode callsign into EOO bits |
-| `rade_rx_get_eoo_callsign` | decode callsign from EOO bits |
-| `rade_tx_eoo` | generate End-of-Over frame |
+| `rade_tx_set_eoo_bits` | V1 (aux text channel): set EOO bits |
+| `rade_tx_eoo` | V1 (aux text channel): generate End-of-Over frame |
+| `rade_tx_set_data_symbol` | V2 (aux text channel): set BPSK data symbol for next frame |
 | `rade_nin` | input samples needed for next `rade_rx` |
-| `rade_rx` | decode IQ samples → features (+ EOO) |
+| `rade_rx` | decode IQ samples → features (+ EOO on V1) |
+| `rade_rx_get_data_symbol` | V2 (aux text channel): get received BPSK data symbol |
 | `rade_sync` | is the Rx in sync? |
 | `rade_freq_offset` | current Rx frequency offset |
-| `rade_snrdB_3k_est` | current Rx SNR estimate (dB) |
+| `rade_snrdB_3k_est` | current Rx SNR estimate (dB, float) |
 | `rade_set_disable_unsync` | test mode: disable unsync |

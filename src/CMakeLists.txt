@@ -14,17 +14,36 @@ set(RADE_DSP_SOURCES
     rade_rx.c
 )
 
-# RADE library (Python-free)
+# RADE V2 ML inference sources (encoder, decoder, frame-sync)
+set(RADE_V2_ML_SOURCES
+    rade_enc_v2.c
+    rade_dec_v2.c
+    rade_sync.c
+    rade_enc_v2_data.c
+    rade_dec_v2_data.c
+    rade_sync_data.c
+)
+
+# RADE V2 DSP sources (OFDM modulator, transmitter, receiver)
+set(RADE_V2_DSP_SOURCES
+    rade_v2_ofdm.c
+    rade_tx_v2.c
+    rade_rx_v2.c
+)
+
+# RADE library
 add_library(rade SHARED
-    rade_api_nopy.c
+    rade_api.c
     rade_enc.c
     rade_dec.c
     rade_enc_data.c
     rade_dec_data.c
     ${RADE_DSP_SOURCES}
+    ${RADE_V2_ML_SOURCES}
+    ${RADE_V2_DSP_SOURCES}
 )
 target_link_libraries(rade opus m)
-target_compile_definitions(rade PRIVATE -DIS_BUILDING_RADE_API=1 -DRADE_PYTHON_FREE=1)
+target_compile_definitions(rade PRIVATE -DIS_BUILDING_RADE_API=1)
 
 set_target_properties(rade PROPERTIES
     VERSION 0.1
@@ -35,11 +54,11 @@ set_target_properties(rade PROPERTIES
 if(NOT WIN32)
 
 # Standalone transmitter
-add_executable(radae_tx radae_tx_nopy.c)
+add_executable(radae_tx radae_tx.c)
 target_link_libraries(radae_tx rade opus m)
 
 # Standalone receiver
-add_executable(radae_rx radae_rx_nopy.c)
+add_executable(radae_rx radae_rx.c)
 target_link_libraries(radae_rx rade opus m)
 
 # Utility: convert real baseband to complex IQ
@@ -47,12 +66,12 @@ add_executable(real2iq real2iq.c)
 target_link_libraries(real2iq m)
 
 # WAV demodulator: WAV in → demod → WAV out
-add_executable(rade_demod_wav rade_demod_wav.c)
-target_link_libraries(rade_demod_wav rade opus m)
+add_executable(rade_rx_wav rade_rx_wav.c)
+target_link_libraries(rade_rx_wav rade opus m)
 
 # WAV modulator: WAV in → features → RADE encode → OFDM mod → WAV out
-add_executable(rade_modulate_wav rade_modulate_wav.c)
-target_link_libraries(rade_modulate_wav rade opus m)
+add_executable(rade_tx_wav rade_tx_wav.c)
+target_link_libraries(rade_tx_wav rade opus m)
 
 # BPF test tool
 add_executable(rade_bpf_test rade_bpf_test.c kiss_fft.c kiss_fftr.c)
@@ -62,8 +81,21 @@ target_link_libraries(rade_bpf_test rade opus m)
 add_executable(rade_ber_test rade_ber_test.c)
 target_link_libraries(rade_ber_test rade m)
 
-# Callsign round-trip test: set callsign → EOO TX → OFDM demod → decode
-add_executable(rade_callsign_test rade_callsign_test.c)
-target_link_libraries(rade_callsign_test rade m)
+# V1 text round-trip test: set callsign → EOO TX → OFDM demod → decode
+add_executable(rade_v1_text_test rade_v1_text_test.c)
+target_link_libraries(rade_v1_text_test rade m)
+
+# V2 text round-trip test: stream "hello world" via BPSK data symbol channel
+add_executable(rade_v2_text_test rade_v2_text_test.c)
+target_link_libraries(rade_v2_text_test rade opus m)
+
+# V2 decoder test: reads latents from stdin, writes features to stdout
+add_executable(rade_dec_v2_test rade_dec_v2_test.c)
+target_link_libraries(rade_dec_v2_test rade opus m)
+
+# V2 encoder test: reads features from stdin, writes latents to stdout
+add_executable(rade_enc_v2_test rade_enc_v2_test.c)
+target_link_libraries(rade_enc_v2_test rade opus m)
+
 
 endif(NOT WIN32)
